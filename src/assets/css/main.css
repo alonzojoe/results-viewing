@@ -21,7 +21,7 @@ a {
 }
 
 body {
-    background: url('./../../images/okopdbackground.jpg') no-repeat top center fixed;
+    background: url('../images/okopdbackground.jpg') no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
