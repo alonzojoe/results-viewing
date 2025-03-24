@@ -1,0 +1,43 @@
+.slots-container{
+    width: 90%;
+    max-width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 0 auto auto auto;
+    box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -webkit-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -moz-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+}
+.slots-content{
+    text-align: center;
+}
+.slots-container .header-text{
+    font-size: 23px;
+    color: #000000;
+}
+.slots-content span{
+    font-size: 70px;
+}
+
+.slots-text {
+    font-size: 90px;
+    font-weight: 500;
+    padding: 0;
+}
+
+.slots-number {
+    color: #4d7cc9;
+    padding: 10px;
+}
+
+.slots-number .main-text {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.btn.btn-default:disabled{
+    background-color: #808998;
+    border: 0;
+    color: #434850;
+}

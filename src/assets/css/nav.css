@@ -1,0 +1,261 @@
+.language {
+    background-color: #fff;
+    font-weight: 600;
+    border-radius: 50px;
+    font-size: 12px;
+    padding-top: 10px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 600;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+.language:hover {
+    background-color: #06bd00;
+    color: white;
+    font-weight: 600;
+    border-radius: 50px;
+    font-size: 12px;
+    padding-top: 10px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 600;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+a.burger-menu {
+    display: flex;
+    font-size: 22px !important;
+    text-align: right;
+    float: right;
+}
+.main-menu {
+    display: none;
+    text-align: right;
+}
+
+.header-menu {
+    background-color: #4d7cc9;
+    display: block;
+    padding: 10px 0;
+}
+
+.header-menu .header-container {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.header-menu a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.header-menu a:hover {
+    color: #8ef1ff;
+}
+
+.header-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.header-menu ul li {
+    display: inline-block;
+    padding-right: 10px;
+    margin-left: 10px;
+    border-right: 1px solid #7fa4e1;
+    line-height: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.header-menu ul li:last-child {
+    padding-right: 0;
+    margin-left: 10px;
+    border-right: 0px solid #fff;
+}
+
+.header-menu ul li:last-child a{
+    cursor: pointer;
+    color: #fff;
+}
+
+.header-menu ul li:last-child a:hover{
+    color: #8ef1ff;
+}
+
+.header-menu ul li:last-child:hover ul{
+    opacity: 1;
+    transition: 0.5s;
+    visibility: visible;
+}
+
+.header-menu ul li ul{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    padding-top: 26px;
+    width: 180px;
+}
+
+.header-menu ul li ul li{
+    display: block;
+    text-align: left;
+    margin:0;
+    padding: 8px 18px;
+    border: 0;
+    width: 100%;
+    background-color: #4573c0;
+}
+
+.header-menu ul li ul li:first-child{
+    padding-top: 14px;
+}
+
+.header-menu ul li ul li:last-child{
+    margin-left: 0;
+    padding-bottom: 14px;
+    border-radius: 0px 0px 4px 4px;
+}
+
+
+.header-menu .col-3 {
+    text-align: left;
+}
+
+.header-menu .col-9 {
+    text-align: right;
+}
+
+.header-menu a.logo {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* mobile menu -------------------------- */
+
+.mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 150;
+    background-color: #4d7cc9;
+    height: 100%;
+    overflow: hidden;
+}
+
+.mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.mobile-menu .mobile-container {
+    max-width: 920px;
+}
+
+.mobile-menu ul {
+    margin: 30% 0;
+    padding: 0px;
+    color: #fff;
+}
+
+.mobile-menu ul li {
+    display: block;
+    border-bottom: 1px solid #5884cb;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.mobile-menu .close-button {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#mobile-menu-wrap a{
+    color: #fff !important;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-size: 16px;
+    cursor: pointer;
+}
+#mobile-menu-wrap .col-11{
+    padding-right: 35px;
+}
+
+/* footer ------------------------------ */
+
+footer {
+    display: block;
+    padding: 30px 0;
+    color: #fff;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+footer .footer-container {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #81e4f0;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    padding-right: 8px;
+    margin-left: 8px;
+    border-right: 1px solid #fff;
+    line-height: 12px;
+}
+
+footer ul li:last-child {
+    border: 0px;
+    padding-right: 0px;
+}
+
+footer .left-content {
+    text-align: center;
+}
+footer .right-content {
+    text-align: center;
+}

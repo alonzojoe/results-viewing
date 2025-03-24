@@ -1,0 +1,78 @@
+.home-container{
+    height: 70vh;
+}
+.headline-container{
+    text-align: center;
+}
+.headline-container a:hover {
+    background-color: #0545ad;
+    border-bottom: 2px solid #fff;
+}
+.headline-container a{
+    background-color: #1d5abd;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    max-width: 350px;
+    margin: 18px auto;
+    opacity: 0;
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) .5s forwards;
+    border-bottom: 2px solid #acc7e3;
+}
+.headline{
+    font-size: 1.5em;
+    font-weight: 700;
+    color:#fff;
+
+    animation: reveal .8s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
+}
+.headline span {
+    display: block;
+}
+
+.modal-content a{
+    display: block;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 8px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    text-align: center;
+    font-weight: 700;
+}
+.modal-content .btn-opd-appointment{
+    background-color: #92dcef; 
+}
+
+.modal-content .btn-opd-appointment:hover{
+    background-color: #4c99ac; 
+}
+
+.modal-content .btn-ok-opd{
+    background-color: #7aa0de;
+}
+
+.modal-content .btn-ok-opd:hover{
+    background-color: #4c71ae;
+}
+
+.modal-content .btn-ehsm-appointment{
+    background-color: #0db63a; 
+}
+
+.modal-content .btn-ehsm-appointment:hover{
+    background-color: #047510; 
+}
+
+.modal-content .btn-ok-opd span, .modal-content .btn-opd-appointment span, .modal-content .btn-ehsm-appointment span{
+    display: block;
+    font-size: 14px;
+}

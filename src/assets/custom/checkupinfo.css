@@ -1,0 +1,137 @@
+.cust-container2 {
+    border-radius: 20px;
+    background: rgb(249, 249, 252);
+    min-height: 10em;
+    max-width: 520px;
+}
+.cust-container3 {
+    border-radius: 10px;
+    background: rgb(249, 249, 252);
+    min-height: 11.2em;
+    min-width: 15em;
+}
+
+.avail-slot {
+    font-size: 3.5em;
+    font-weight: 700;
+}
+
+.text-label {
+    font-weight: 500;
+}
+
+.cust-logo {
+    height: 25em;
+    z-index: 1;
+    position: relative;
+}
+
+@keyframes loadingDots {
+    0%, 20% {
+        content: "Loading Available Time";
+    }
+    40% {
+        content: "Loading Available Time.";
+    }
+    60% {
+        content: "Loading Available Time..";
+    }
+    80% {
+        content: "Loading Available Time...";
+    }
+    100% {
+        content: "Loading Available Time";
+    }
+}
+
+@keyframes loadingDateDots {
+    0%, 20% {
+        content: "Loading Available Date";
+    }
+    40% {
+        content: "Loading Available Date.";
+    }
+    60% {
+        content: "Loading Available Date..";
+    }
+    80% {
+        content: "Loading Available Date...";
+    }
+    100% {
+        content: "Loading Available Date";
+    }
+}
+
+/* @keyframes flowingGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+} */
+
+@keyframes animate8345 {
+    0%,100% {
+      filter: hue-rotate(0deg);
+    }
+  
+    50% {
+      filter: hue-rotate(360deg);
+    }
+}
+
+
+/* .loading-text {
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to right, #2d60ec, #3ccfda);
+    font-size: 30px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: loadingDots 1.5s infinite, animate8345 9s linear infinite;
+    font-weight: bold;
+} */
+  
+.loading-text::after {
+    content: "Loading Available Time";
+    animation: loadingDots 1.5s infinite, animate8345 9s linear infinite;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to right, #102767, #102767);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.loading-date-text::after {
+    content: "Loading Available Date";
+    animation: loadingDateDots 1.5s infinite, animate8345 9s linear infinite;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to right, #102767, #102767);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.cust-res-text{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.k-slot{
+    animation: tilt-n-move-shaking 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes tilt-n-move-shaking {
+    0% { transform: translateY(0) }
+    25% { transform: translateY(5px) }
+    50% { transform: translateY(-5px) }
+    75% { transform: translateY(5px) }
+    100% { transform: translateY(0) }
+}
+
+.cust-text-ol {
+    font-weight: 500;
+}

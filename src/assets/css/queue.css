@@ -1,0 +1,44 @@
+.queue-container{
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    height: 45%;
+    border-radius: 10px;
+    padding: 50px;
+    background-color: #fff;
+    margin: 0 auto auto auto;
+    box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -webkit-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -moz-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+}
+
+.queue-container .btn-notavailable {
+    display: block;
+    background-color: red;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.queue-container .btn-available {
+    display: block;
+    background-color:#9fd693;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.queue-container .btn-available:hover {
+    background-color:#87c86e;
+}
+
+.queue-container img {
+    width: 50%;
+}

@@ -1,0 +1,22 @@
+.qr-container{
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px 30px 15px 30px;
+    margin: 0 auto auto auto;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -webkit-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -moz-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+}
+.header-text{
+    font-weight: bold;
+    color: #4a4a4a;
+}
+.qr-scanner{
+    background-image: url('./../../images/qr-scan.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    padding:100px;
+    border-radius: 10px;
+}
