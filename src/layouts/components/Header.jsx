@@ -1,6 +1,9 @@
 import appLogo from "../../assets/images/appLogo.png";
+import useToggle from "../../hooks/useToggle";
 
 const Header = () => {
+  const [header, toggleHeader] = useToggle();
+
   return (
     <>
       <div className="header-menu">
@@ -44,7 +47,7 @@ const Header = () => {
                   <a>OKOPD Queue</a>
                 </div>
                 <div className="col-1">
-                  <a className="burger-menu">
+                  <a className="burger-menu" onClick={() => toggleHeader()}>
                     <i className="fa fa-bars" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -53,37 +56,43 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {/* <div className="mobile-menu">
-        <div className="container mobile-container">
-          <i className="fa fa-times close-button" aria-hidden="true"></i>
-          <ul>
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Services</a>
-            </li>
-            <li>
-              <a>Policy</a>
-            </li>
-            <li>
-              <a>OKOPD Queue</a>
-            </li>
-            <li>
-              <a>View Appointment</a>
-            </li>
-            <li>
-              <a
-                href="#"
-                data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop"
-              >
-                Get Appointment
-              </a>
-            </li>
-          </ul>
+      {header && (
+        <div className="mobile-menu">
+          <div className="container mobile-container">
+            <i
+              className="fa fa-times close-button"
+              aria-hidden="true"
+              onClick={() => toggleHeader()}
+            ></i>
+            <ul>
+              <li>
+                <a>Home</a>
+              </li>
+              <li>
+                <a>Services</a>
+              </li>
+              <li>
+                <a>Policy</a>
+              </li>
+              <li>
+                <a>OKOPD Queue</a>
+              </li>
+              <li>
+                <a>View Appointment</a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  Get Appointment
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div> */}
+      )}
     </>
   );
 };
