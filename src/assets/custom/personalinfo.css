@@ -1,0 +1,60 @@
+.cust-container4 {
+    border-radius: 20px;
+    background: rgb(249, 249, 252);
+    min-height: 10em;
+    max-width: 920px;
+}
+
+.cust-text-label {
+    font-weight: bold;
+    color: #4a4a4a;
+    margin: 6px 0;
+}
+
+.cust-container4-modal{
+    height: 100vh;
+    width: 100%;
+    z-index: 1000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    background: rgba(0, 0, 0, 0.60);
+    justify-content: center;
+    opacity: 100;
+    color: black;
+
+    /* transform: scale(.001); */
+    animation: animateModal .4s ease-in-out forwards;
+}
+
+.cust-container4-submodal{
+    border-radius: 20px;
+    background: rgb(249, 249, 252);
+    height: 80%;
+    width: 55%;
+
+}
+
+@keyframes animateModal {
+    from {
+        opacity: 0;
+        transform: translateY(0)
+    }
+
+    to {
+        opacity: 2;
+        transform: translateY(0px)
+    }
+}
+
+.modal-content{
+    min-height: 4em;
+}
+
+.opdconsenttext {
+    text-indent: 20px; 
+    text-align: justify;
+    font-size: 17px;
+}

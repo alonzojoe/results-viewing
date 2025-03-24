@@ -1,0 +1,177 @@
+  /* Styles for extra small devices (up to 575.98px) */
+  @media (max-width: 575.98px) {
+    /* Your CSS rules for extra small devices */
+    .header-text{
+        font-size: 15px;
+    }
+    .field-container{
+        font-size: 13px;
+    }
+    .btn-container{
+        margin-top: 25px;
+    }
+    .btn-next{
+        font-size: 15px;
+    }
+    .ptype-container{
+        width: 90%;
+    }
+
+    .ptype-text{
+        font-size: 20px;
+    }
+    .btn-scan{
+        width: 100%;
+    }
+  }
+  
+  /* Styles for small devices (576px to 767.98px) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .ptype-container{
+        width: 70%;
+    }
+    .ptype-container span{
+        font-size: 25px;
+    }
+    .ptype-text{
+        font-size: 20px;
+    }
+    .consent-container{
+        width: 90%;
+    }
+    .btn-scan{
+        width: 100%;
+    }
+    .headline{
+        font-size: 2em;
+    }
+    .slots-container .header-text{
+        font-size: 30px;
+    }
+
+  }
+  
+  /* Styles for medium devices (768px to 991.98px) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    /* Your CSS rules for medium devices */
+    .ptype-container{
+        width: 50%;
+    }
+    .ptype-container span{
+        font-size: 25px;
+    }
+    .consent-container{
+        width: 90%;
+    }
+    .ptype-text{
+        font-size: 20px;
+    }
+    .btn-scan{
+        width: 50%;
+    }
+    .headline{
+        font-size: 3em;
+    }
+    .headline-container a{
+        font-size: 26px;
+        max-width: 450px;
+    }
+    .consent-content {
+        height: auto;
+        overflow-y: auto;
+    }
+    .slots-container .header-text{
+        font-size: 30px;
+    }
+    .policy-header, .services-header {
+        font-size: 38px;
+    }
+  }
+  
+  /* Styles for large devices (992px and above) */
+  @media (min-width: 992px) {
+    /* Your CSS rules for large devices */
+    .ptype-container{
+        width: 40%;
+    }
+    .ptype-container span{
+        font-size: 24px;
+    }
+    .qr-container{
+        width: 40%;
+    }
+
+    .consent-container{
+        width: 70%;
+    }
+
+    .ptype-text{
+        font-size: 20px;
+    }
+    
+    .btn-scan{
+        width: 50%;
+    }
+
+    .ptype-container label{
+        font-size: 30px;
+    }
+
+    .ptype-container i{
+        font-size: 90px;
+    }
+
+    .logo-container img{
+        height: 90px;
+    }
+
+    .logo-container{
+        margin: 30px auto 30px auto;
+    }
+
+    .registration-container{
+        max-width: 920px;
+    }
+    .success-container{
+        width: 50%;
+    }
+
+    .burger-menu, #mobile-menu-wrap {
+        display: none !important;
+    }
+    .main-menu {
+        display: block;
+    }
+
+    .header-menu {
+        padding: 16px 0;
+    }
+
+    footer {
+        padding: 60px;
+        margin-top: 0px;
+    }
+
+    .consent-content {
+        height: auto;
+        overflow-y: auto;
+    }
+    .headline{
+        font-size: 4.5em;
+    }
+    .headline-container a{
+        font-size: 28px;
+        max-width: 540px;
+    }
+
+    .services-container, .policy-container{
+        padding: 30px;
+    }
+    .slots-container .header-text{
+        font-size: 30px;
+    }
+
+    .policy-header, .services-header {
+        font-size: 38px;
+    }
+  }

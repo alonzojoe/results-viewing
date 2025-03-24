@@ -1,0 +1,63 @@
+@import url('./consent.css');
+@import url('./services.css');
+@import url('./policy.css');
+@import url('./advisory.css');
+@import url('./logo.css');
+@import url('./nav.css');
+@import url('./patienttype.css');
+@import url('./queue.css');
+@import url('./searchqr.css');
+@import url('./registration.css');
+@import url('./vue-transition.css');
+@import url('./slots.css');
+@import url('./home.css');
+@import url('./success.css');
+@import url('./transition.css');
+@import url('./loader.css');
+@import url('./mediaquery.css');
+
+a {
+    transition: all 0.5s ease;
+}
+
+body {
+    background: url('./../../images/okopdbackground.jpg') no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.maincontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 0 0;
+}
+
+.btn-default {
+    font-weight: bold;
+    background-color: #6591da;
+    color: #fff;
+    margin: auto auto auto auto;
+}
+
+.btn-default:hover {
+    background-color: #385f9f;
+    color: #fff;
+}
+
+.btn-back {
+    background-color: #808998;
+    color: #fff;
+    font-size: 15px;
+    width: 150px;
+    margin-top: 30px;
+}
+
+.btn-back:hover {
+    background-color: #494f57;
+    color: #fff;
+}

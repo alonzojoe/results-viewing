@@ -1,0 +1,84 @@
+.registration-container{
+    width: 90%;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 5%;
+    padding-top: 2%;
+    margin: 0 auto auto auto;
+    box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -webkit-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -moz-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+}
+.field-container{
+    font-weight: bold;
+    color: #4a4a4a;
+    margin: 6px 0;
+}
+
+.progress{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    height: 60px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.progress div.numbers{
+    width: 15%;
+    text-align: center;
+}
+
+.progress div.lines{
+    width: 12%;
+    border-top: 6px dotted #bdbdbd;
+}
+
+.progress div.lines1{
+    animation: color-change1 2s linear infinite;
+}
+
+.progress div.lines2{
+    animation: color-change2 2s linear infinite;
+}
+
+  @keyframes color-change1 {
+    0%,100%{
+      border-color:#bdbdbd;
+    }
+    75%{
+      border-color:#75c457;
+    }
+  }
+
+  @keyframes color-change2 {
+    0%,100%{
+      border-color:#75c457;
+    }
+    50%{
+      border-color:#bdbdbd;
+    }
+  }
+
+.progress div span{
+    display: inline-block;
+    background-color: #fff;
+    border: 4px solid #bdbdbd;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #bdbdbd;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+}
+
+.progress div span.active{
+    background-color: #92ce7b;
+    border: 4px solid #92ce7b;
+    color: #fff;
+}
+
+
+
+

@@ -1,0 +1,17 @@
+.success-container {
+    width: 90%;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 24px;
+    margin: 0 auto auto auto;
+    box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -webkit-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -moz-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+}
+.success-holder {
+    background: url(../../images/success.gif) center center;
+    overflow: hidden;
+    height: 200px;
+    width: 240px;
+    margin: 0 auto;
+}

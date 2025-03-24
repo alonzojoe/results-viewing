@@ -1,0 +1,23 @@
+.logo-container{
+    width: 100%;
+    text-align: center;
+    margin: 20px auto 30px auto;
+    position: relative;
+    z-index: 0;
+}
+.logo-container img{
+    opacity: 0;
+    height: 80px;
+    animation: reveal .8s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards;
+}
+
+@keyframes reveal {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,62 @@
+.ptype-container{
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    height: 45%;
+    border-radius: 10px;
+    padding: 50px;
+    background-color: #fff;
+    margin: 0 auto auto auto;
+    box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -webkit-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+    -moz-box-shadow: -1px 1px 25px -1px rgba(0,0,0,0.31);
+}
+
+.ptype-container .ptype-btn-container{
+    margin: 0 auto;
+}
+
+.ptype-container span{
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.ptype-container .col-8{
+    padding-left: 16px;
+}
+
+.ptype-container i{
+    font-size: 70px;
+}
+
+.ptype-btn {
+    display: block;
+    border-radius: 10px;
+    color: #fff;
+    padding: 1em 1.8em;
+    cursor: pointer;
+}
+
+.ptype-btn.new {
+    background-color: #92dcef;
+    margin-bottom: 14px;
+}
+
+.ptype-btn.new:hover {
+    background-color: #53c2de;
+    cursor: pointer;
+}
+
+.ptype-btn.old {
+    background-color: #7aa0de;
+}
+
+.ptype-btn.old:hover {
+    background-color: #4e7dc8;
+}
+
+.ptype-text{
+    font-weight: bold;
+    color: #4a4a4a;
+}
