@@ -25,6 +25,10 @@
     border: 1px solid #4D7CC9;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 405px) {
     .intersection {
         width: 75%;
