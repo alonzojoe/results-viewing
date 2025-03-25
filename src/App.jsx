@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout.jsx";
-import Results from "./pages/Results.jsx";
+import Results from "./pages/Results/Results.jsx";
 
 function App() {
   return (
