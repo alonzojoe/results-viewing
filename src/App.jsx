@@ -5,7 +5,7 @@ import Results from "./pages/Results.jsx";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/opd/lab">
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route index element={<Results />} />
