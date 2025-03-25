@@ -20,15 +20,15 @@ a {
     transition: all 0.5s ease;
 }
 
-body {
-    background: url('../images/okopdbackground.jpg') no-repeat top center fixed;
+/* body {
+    background: url('./okopdbackground.jpg') no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+} */
 
 .maincontainer {
     display: flex;
