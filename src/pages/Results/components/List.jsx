@@ -1,9 +1,8 @@
+import TitleContainer from "../../../components/TitleContainer";
 const List = () => {
   return (
     <>
-      <div className="w-100 mb-">
-        <h2 className="fs-5">List of available results</h2>
-      </div>
+      <TitleContainer title="List of available results" />
       <div className="btn-container mt-3 text-center">
         <div className="d-flex justify-content-between mb-2">
           <div>
