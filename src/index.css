@@ -1,0 +1,32 @@
+.steps {
+    height: 30px;
+    width: 30px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #4D7CC9;
+    background: #fff;
+}
+
+.steps.active {
+    color: #fff;
+    background: #4D7CC9;
+}
+
+.intersection {
+    z-index: -1;
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    width: 85%;
+}
+
+.intersection .child {
+    border: 1px solid #4D7CC9;
+}
+
+@media screen and (max-width: 405px) {
+    .intersection {
+        width: 75%;
+    }
+}
