@@ -7,7 +7,7 @@ import Verification from "./components/Verification";
 import List from "./components/List";
 
 const Results = () => {
-  const [activeTab, setActiveTab] = useState(3);
+  const [activeTab, setActiveTab] = useState(1);
   return (
     <div>
       <LogoContainer>
