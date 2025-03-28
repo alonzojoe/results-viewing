@@ -11,7 +11,9 @@ const useFetch = (endpoint, params = {}) => {
       setLoading(true);
       setError(null);
       try {
-        const res = await api(endpoint, params);
+        const res = await api(endpoint, {
+          params,
+        });
         setData(await res.data.data);
       } catch (error) {
         setError(error?.message);

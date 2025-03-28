@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LogoContainer from "../../components/LogoContainer";
 import LogoImg from "../../assets/images/okopdlogo.png";
 import Timeline from "../../components/Timeline";
 import Search from "./components/Search";
 import Verification from "./components/Verification";
 import List from "./components/List";
+import { PatientContext } from "../../context/Patient/patient-context";
+import { useContext } from "react";
 
 const Results = () => {
   const [activeTab, setActiveTab] = useState(1);
+  const { patient: data } = useContext(PatientContext);
+  useEffect(() => {
+    if (data.patient) {
+      console.log(data.patient);
+      setActiveTab(2);
+    }
+  }, [data]);
   return (
     <div>
       <LogoContainer>
