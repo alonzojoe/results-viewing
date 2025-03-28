@@ -6,6 +6,8 @@ import "./assets/custom/main.css";
 import "./assets/css/main.css";
 import "./assets/bootstrap/js/bootstrap.bundle.min.js";
 import "./index.css";
+import "sweetalert2/dist/sweetalert2.min.css";
+
 import App from "./App.jsx";
 import PatientProvider from "./context/Patient/patient-provider.jsx";
 
