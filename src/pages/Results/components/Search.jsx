@@ -13,6 +13,7 @@ const Search = () => {
     setIsLoading(true);
     await searchPatient({ transaction_no: searchRef.current.value });
     setIsLoading(false);
+    searchRef.current.value = "";
   };
 
   return (

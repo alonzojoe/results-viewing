@@ -9,14 +9,21 @@ import { PatientContext } from "../../context/Patient/patient-context";
 import { useContext } from "react";
 
 const Results = () => {
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(2);
   const { patient: data } = useContext(PatientContext);
   useEffect(() => {
-    if (data.patient) {
+    if (data.patient && !data.verified) {
       console.log(data.patient);
       setActiveTab(2);
+    } else if (data.patient && data.verified) {
+      setActiveTab(3);
+    } else {
+      setActiveTab(1);
     }
   }, [data]);
+
+  const { patient, verified } = data;
+
   return (
     <div>
       <LogoContainer>
