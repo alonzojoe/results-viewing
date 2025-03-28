@@ -22,7 +22,6 @@ const Results = () => {
     }
   }, [data]);
 
-  const { patient, verified } = data;
 
   return (
     <div>

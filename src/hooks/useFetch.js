@@ -14,7 +14,7 @@ const useFetch = (endpoint, params = {}) => {
         const res = await api(endpoint, {
           params,
         });
-        setData(await res.data.data);
+        setData(res.data.data);
       } catch (error) {
         setError(error?.message);
       } finally {
@@ -23,7 +23,7 @@ const useFetch = (endpoint, params = {}) => {
     };
 
     fetchData();
-  }, [endpoint, params]);
+  }, [endpoint, JSON.stringify(params)]);
 
   return [data, loading, error];
 };
