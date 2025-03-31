@@ -6,15 +6,26 @@ const Verification = () => {
   const dateRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { patient, dispatchPatient, verifyTransaction, verified } =
-    useContext(PatientContext);
+  const {
+    patient: data,
+    dispatchPatient,
+    verifyTransaction,
+    verified,
+  } = useContext(PatientContext);
+
+  console.log("data", data);
 
   const verify = async () => {
+    const { patient } = data;
+
     if (dateRef.current.value.trim() === "" || dateRef.current.value === null)
       return;
     setIsLoading(true);
     const transDate = moment(dateRef.current.value).format("YYYY-MM-DD");
-    await verifyTransaction({ transactionDate: transDate });
+    await verifyTransaction({
+      transaction_no: patient[0].PatientHistoryID,
+      transaction_date: transDate,
+    });
     setIsLoading(false);
     dateRef.current.value = null;
   };
@@ -25,7 +36,6 @@ const Verification = () => {
         <label className="fw-bold mb-1">Transaction Date</label>
         <input ref={dateRef} type="date" className="form-control" />
       </div>
-      {JSON.stringify(patient)}
       <div className="btn-container mt-3 text-center">
         <button
           className="btn-default btn w-100 mb-5"

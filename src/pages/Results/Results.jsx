@@ -7,6 +7,7 @@ import Verification from "./components/Verification";
 import List from "./components/List";
 import { PatientContext } from "../../context/Patient/patient-context";
 import { useContext } from "react";
+import Pagination from "../../components/Pagination";
 
 const Results = () => {
   const [activeTab, setActiveTab] = useState(2);
@@ -21,7 +22,6 @@ const Results = () => {
       setActiveTab(1);
     }
   }, [data]);
-
 
   return (
     <div>

@@ -26,7 +26,6 @@ const Search = () => {
           className="form-control"
           placeholder="Enter Patient Transaction Number..."
         />
-        {JSON.stringify(patient)}
       </div>
       <div className="btn-container mt-3 text-center">
         <button
