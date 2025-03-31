@@ -75,6 +75,10 @@ const PatientProvider = ({ children }) => {
         params,
       });
 
+      if (res.data.data.results.length === 0) {
+        throw new Error("Error");
+      }
+
       dispatchPatient({
         type: ACTIONS.SET_VERIFIED,
         payload: {},
