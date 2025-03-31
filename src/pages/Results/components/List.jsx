@@ -1,47 +1,58 @@
-import { useContext, useMemo, useRef, useState } from "react";
+import { useContext, useMemo, useEffect, useState } from "react";
 import { PatientContext } from "../../../context/Patient/patient-context";
 import moment from "moment";
 import TitleContainer from "../../../components/TitleContainer";
 import useFetch from "./../../../hooks/useFetch";
 import Pagination from "../../../components/Pagination";
-const LIMIT = 10;
+const PER_PAGE = 10;
 const List = () => {
-  const dateRef = useRef(null);
-  const [paginated, setPaginated] = useState({
-    currentPage: 1,
+  const { patient: data } = useContext(PatientContext);
+  const { patient } = data;
+  const PatientHistoryID = patient[0]?.PatientHistoryID;
+  const [results, loading, error] = useFetch(`/result/${PatientHistoryID}`);
+  const [state, setState] = useState({
     display: [],
+    currentPage: 1,
   });
 
-  const { patient: data } = useContext(PatientContext);
-
-  const { patient } = data;
-
-  const PatientHistoryID = patient[0]?.PatientHistoryID;
-
-  const [results, loading, error] = useFetch(`/result/${PatientHistoryID}`);
-  console.log("res", results);
-
-  const display = useMemo(() => {
-    if (results) {
-      return {
-        lastpage: Math.ceil(results.length / LIMIT),
-        display: results.slice(0, LIMIT),
-      };
-    }
-    return {
-      lastpage: 0,
-      display: [],
-    };
+  const totalPages = useMemo(() => {
+    return results ? Math.ceil(results.length / PER_PAGE) : 0;
   }, [results]);
+
+  const updateList = (page) => {
+    const start = (page - 1) * PER_PAGE;
+    const end = start + PER_PAGE;
+    setState((prev) => ({
+      ...prev,
+      currentPage: page,
+      display: results.slice(start, end),
+    }));
+  };
+
+  const handlePageChange = (type) => {
+    if (type === "prev" && state.currentPage > 1) {
+      updateList(state.currentPage - 1);
+    } else if (type === "next" && state.currentPage < totalPages) {
+      updateList(state.currentPage + 1);
+    }
+  };
+
+  const firstPage = () => updateList(1);
+  const lastPage = () => updateList(totalPages);
+
+  useEffect(() => {
+    if (results) {
+      updateList(state.currentPage);
+    }
+  }, [results, state.currentPage]);
 
   return (
     <>
       <TitleContainer title="List of available results" />
       {JSON.stringify(loading)}
       <div className="btn-container mt-3 text-center">
-        <pre>{JSON.stringify(display)}</pre>
-        {results &&
-          results.map((r, index) => (
+        {state.display &&
+          state.display.map((r, index) => (
             <div className="d-flex justify-content-between mb-2" key={r.id}>
               <div>
                 {index + 1}{" "}
@@ -60,7 +71,13 @@ const List = () => {
               </div>
             </div>
           ))}
-        <Pagination />
+        <Pagination
+          onFirstPage={firstPage}
+          onHandlePage={handlePageChange}
+          onLastPage={lastPage}
+          currentPage={state.currentPage}
+          lastPage={totalPages}
+        />
       </div>
     </>
   );
