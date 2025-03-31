@@ -25,7 +25,9 @@ const List = () => {
     setState((prev) => ({
       ...prev,
       currentPage: page,
-      display: results.slice(start, end),
+      display: results
+        .map((r, index) => ({ ...r, item_id: index + 1 }))
+        .slice(start, end),
     }));
   };
 
@@ -49,35 +51,85 @@ const List = () => {
   return (
     <>
       <TitleContainer title="List of available results" />
-      {JSON.stringify(loading)}
       <div className="btn-container mt-3 text-center">
-        {state.display &&
-          state.display.map((r, index) => (
-            <div className="d-flex justify-content-between mb-2" key={r.id}>
-              <div>
-                {index + 1}{" "}
-                <span className="cursor-pointer">
-                  <i
-                    className="fa fa-file-pdf text-danger mx-1 mr-2 fs-5"
-                    aria-hidden="true"
-                  ></i>
-                  <span className="cursor-pointer text-primary fw-bold fs-6">
-                    {r.description} <small>(Click to view)</small>
-                  </span>
-                </span>
-              </div>
-              <div>
-                <i className="fa fa-eye text-primary fs-5 cursor-pointer"></i>
-              </div>
+        {loading ? (
+          <div>
+            <div className="spinner-border text-primary" role="status">
+              <span className="visually-hidden">Loading...</span>
             </div>
-          ))}
-        <Pagination
-          onFirstPage={firstPage}
-          onHandlePage={handlePageChange}
-          onLastPage={lastPage}
-          currentPage={state.currentPage}
-          lastPage={totalPages}
-        />
+          </div>
+        ) : error ? (
+          <div>
+            <p className="text text-danger">
+              Something went wrong. <br /> Please try again later
+            </p>
+          </div>
+        ) : (
+          <table className="mb-3">
+            <tbody>
+              {state.display && state.display.length > 0 ? (
+                state.display.map((r) => (
+                  <tr key={r.id}>
+                    <td className="p-1">{r.item_id}.</td>
+                    <td className="p-1">
+                      <span className="cursor-pointer">
+                        <i
+                          className="fa fa-file-pdf text-danger mx-1 mr-2 fs-5"
+                          aria-hidden="true"
+                        ></i>
+                      </span>
+                    </td>
+                    <td className="p-1 text-start">
+                      <div>
+                        <span className="cursor-pointer text-primary">
+                          {r.description} <small>(Click to view)</small>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td className="text-center text-danger" colSpan={3}>
+                    <p>
+                      Patient results have not been released yet. Please try
+                      again later.
+                    </p>
+                  </td>
+                </tr>
+              )}
+            </tbody>
+            {/* <td>
+                    <div className="d-flex justify-content-between mb-2">
+                      <div>
+                        {index + 1}{" "}
+                        <span className="cursor-pointer">
+                          <i
+                            className="fa fa-file-pdf text-danger mx-1 mr-2 fs-5"
+                            aria-hidden="true"
+                          ></i>
+                          <span className="cursor-pointer text-primary fw-bold fs-6">
+                            {r.description} <small>(Click to view)</small>
+                          </span>
+                        </span>
+                      </div>
+                      <div>
+                        <i className="fa fa-eye text-primary fs-5 cursor-pointer"></i>
+                      </div>
+                    </div>
+                  </td> */}
+          </table>
+        )}
+
+        {state.display.length > 0 && (
+          <Pagination
+            onFirstPage={firstPage}
+            onHandlePage={handlePageChange}
+            onLastPage={lastPage}
+            currentPage={state.currentPage}
+            lastPage={totalPages}
+          />
+        )}
       </div>
     </>
   );
