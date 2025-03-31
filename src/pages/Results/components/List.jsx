@@ -4,6 +4,7 @@ import moment from "moment";
 import TitleContainer from "../../../components/TitleContainer";
 import useFetch from "./../../../hooks/useFetch";
 import Pagination from "../../../components/Pagination";
+import PatientInfo from "../../../components/PatientInfo";
 const PER_PAGE = 10;
 const List = () => {
   const { patient: data } = useContext(PatientContext);
@@ -50,8 +51,10 @@ const List = () => {
 
   return (
     <>
+      <PatientInfo patient={patient[0]} />
+
       <TitleContainer title="List of available results" />
-      <div className="btn-container mt-3 text-center">
+      <div className="btn-container mt-2 text-center">
         {loading ? (
           <div>
             <div className="spinner-border text-primary" role="status">
@@ -99,25 +102,6 @@ const List = () => {
                 </tr>
               )}
             </tbody>
-            {/* <td>
-                    <div className="d-flex justify-content-between mb-2">
-                      <div>
-                        {index + 1}{" "}
-                        <span className="cursor-pointer">
-                          <i
-                            className="fa fa-file-pdf text-danger mx-1 mr-2 fs-5"
-                            aria-hidden="true"
-                          ></i>
-                          <span className="cursor-pointer text-primary fw-bold fs-6">
-                            {r.description} <small>(Click to view)</small>
-                          </span>
-                        </span>
-                      </div>
-                      <div>
-                        <i className="fa fa-eye text-primary fs-5 cursor-pointer"></i>
-                      </div>
-                    </div>
-                  </td> */}
           </table>
         )}
 
