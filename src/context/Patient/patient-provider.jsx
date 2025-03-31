@@ -75,7 +75,7 @@ const PatientProvider = ({ children }) => {
         params,
       });
 
-      if (res.data.data.results.length === 0) {
+      if (!Array.isArray(res.data.data) || !res.data.data.length) {
         throw new Error("Error");
       }
 

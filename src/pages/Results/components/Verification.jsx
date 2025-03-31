@@ -16,12 +16,14 @@ const Verification = () => {
   console.log("data", data);
 
   const verify = async () => {
+    const { patient } = data;
+
     if (dateRef.current.value.trim() === "" || dateRef.current.value === null)
       return;
     setIsLoading(true);
     const transDate = moment(dateRef.current.value).format("YYYY-MM-DD");
     await verifyTransaction({
-      transaction_no: PatientHistoryID,
+      transaction_no: patient[0].PatientHistoryID,
       transaction_date: transDate,
     });
     setIsLoading(false);
