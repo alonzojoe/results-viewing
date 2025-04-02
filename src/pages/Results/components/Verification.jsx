@@ -2,7 +2,7 @@ import { useContext, useRef, useState } from "react";
 import { PatientContext } from "../../../context/Patient/patient-context";
 import moment from "moment";
 
-const Verification = () => {
+const Verification = ({ language }) => {
   const dateRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -30,10 +30,13 @@ const Verification = () => {
     dateRef.current.value = null;
   };
 
+  const labelTitle = language?.data[9]?.transaction_date;
+  const btnTitle = language?.data[9]?.timeline["verification"];
+
   return (
     <>
       <div className="w-100 mb-">
-        <label className="fw-bold mb-1">Transaction Date</label>
+        <label className="fw-bold mb-1">{labelTitle}</label>
         <input ref={dateRef} type="date" className="form-control" />
       </div>
       <div className="btn-container mt-3 text-center">
@@ -42,7 +45,7 @@ const Verification = () => {
           onClick={verify}
           disabled={isLoading}
         >
-          <i className="fa fa-check" aria-hidden="true"></i> Verify
+          <i className="fa fa-check" aria-hidden="true"></i> {btnTitle}
         </button>
       </div>
     </>

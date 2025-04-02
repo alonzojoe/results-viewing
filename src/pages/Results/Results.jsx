@@ -39,7 +39,7 @@ const Results = () => {
         {activeTab === 1 ? (
           <Search language={language} />
         ) : activeTab === 2 ? (
-          <Verification />
+          <Verification language={language} />
         ) : (
           <List />
         )}

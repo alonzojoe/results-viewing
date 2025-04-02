@@ -222,11 +222,12 @@
                 "title": "Laboratory Results",
                 "patient": "Patient",
                 "transaction": "Transaction No:",
+                "transaction_date": "Transaction Date:",
                 "list": "List of available results",
                 "notFound": "Patient results have not been released yet. Please try again later.",
                 "timeline": {
                     "search": "Search",
-                    "verifification": "Verification",
+                    "verification": "Verify",
                     "viewing": "Viewing"
                 },
                 "message": {
@@ -465,11 +466,12 @@
                 "title": "Mga Resulta ng Laboratoryo",
                 "patient": "Pasyente",
                 "transaction": "Numero ng Transaksyon:",
+                "transaction_date": "Petsa ng Transaction:",
                 "list": "Listahan ng mga maaring makita na resulta",
                 "notFound": "Hindi pa nailalabas ang mga resulta ng pasyente. Pakisubukang muli mamaya.",
                 "timeline": {
                     "search": "Hanapin",
-                    "verifification": "I-Verify",
+                    "verification": "I-Verify",
                     "viewing": "Resulta"
                 },
                 "message": {
