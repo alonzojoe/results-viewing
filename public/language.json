@@ -462,7 +462,7 @@
             },
             {
                 "id": 9,
-                "title": "Resulta ng Laboratoryo",
+                "title": "Mga Resulta ng Laboratoryo",
                 "patient": "Pasyente",
                 "transaction": "Transaksyon",
                 "list": "Listahan ng mga maaring makita na resulta",

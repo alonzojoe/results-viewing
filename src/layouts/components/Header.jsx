@@ -1,7 +1,7 @@
 import appLogo from "../../assets/images/appLogo.png";
 import useToggle from "../../hooks/useToggle";
 import LanguageContext from "../../context/Global/language-context";
-import { useContext, useMemo } from "react";
+import { useContext } from "react";
 
 const Header = () => {
   const [header, toggleHeader] = useToggle();
