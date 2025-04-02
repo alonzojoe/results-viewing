@@ -9,10 +9,12 @@ import { PatientContext } from "../../context/Patient/patient-context";
 import { useContext } from "react";
 import LanguageSelector from "./components/LanguageSelector";
 import Footer from "./components/Footer";
+import LanguageContext from "../../context/Global/language-context";
 
 const Results = () => {
   const [activeTab, setActiveTab] = useState(2);
   const { patient: data } = useContext(PatientContext);
+  const { language, selectLanguage } = useContext(LanguageContext);
   useEffect(() => {
     if (data.patient && !data.verified) {
       console.log(data.patient);
@@ -25,27 +27,28 @@ const Results = () => {
   }, [data]);
 
   return (
-      <div>
-        <LogoContainer>
-          <img src={LogoImg} alt="JBLMGH - OKOPD" />
-        </LogoContainer>
-        <div className="py-5 gap-2 qr-container transition-fade-in">
-          <h2 className="d-flex justify-content-center align-self-center mb-4">
-            Laboratory Results
-          </h2>
-          <Timeline selectedId={activeTab} />
-          <hr />
-          {activeTab === 1 ? (
-            <Search />
-          ) : activeTab === 2 ? (
-            <Verification />
-          ) : (
-            <List />
-          )}
-        </div>
-        <LanguageSelector />
-        <Footer />
+    <div>
+      <LogoContainer>
+        <img src={LogoImg} alt="JBLMGH - OKOPD" />
+      </LogoContainer>
+      <div className="py-5 gap-2 qr-container transition-fade-in">
+        <h2 className="d-flex justify-content-center align-self-center mb-4">
+          Laboratory Results
+        </h2>
+        <Timeline selectedId={activeTab} />
+        <hr />
+        {activeTab === 1 ? (
+          <Search />
+        ) : activeTab === 2 ? (
+          <Verification />
+        ) : (
+          <List />
+        )}
       </div>
+      {JSON.stringify(language)}
+      <LanguageSelector />
+      <Footer />
+    </div>
   );
 };
 
