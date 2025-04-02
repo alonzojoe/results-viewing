@@ -1,7 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import { PatientContext } from "../../../context/Patient/patient-context";
 
-const Search = () => {
+const Search = ({ language }) => {
   const searchRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -16,16 +16,15 @@ const Search = () => {
     searchRef.current.value = "";
   };
 
+  console.log("search comp", language?.data[9]?.transaction);
+
+  const labelTitle = language?.data[9]?.transaction;
+  const btnTitle = language?.data[9]?.timeline["search"];
   return (
     <>
       <div className="w-100 mb-2">
-        <label className="fw-bold mb-1">Transaction Number</label>
-        <input
-          ref={searchRef}
-          type="text"
-          className="form-control"
-          placeholder="Enter Patient Transaction Number..."
-        />
+        <label className="fw-bold mb-1">{labelTitle}</label>
+        <input ref={searchRef} type="text" className="form-control" />
       </div>
       <div className="btn-container mt-3 text-center">
         <button
@@ -33,7 +32,7 @@ const Search = () => {
           onClick={search}
           disabled={isLoading}
         >
-          <i className="fa fa-search" aria-hidden="true"></i> Search
+          <i className="fa fa-search" aria-hidden="true"></i> {btnTitle}
         </button>
       </div>
     </>
