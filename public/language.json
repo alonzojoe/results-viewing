@@ -216,6 +216,25 @@
                         "search":"Search"
                     }
                 ]
+            },
+            {
+                "id": 9,
+                "title": "Laboratory Results",
+                "patient": "Patient",
+                "transaction": "Transaction",
+                "list": "List of available results",
+                "notFound": "Patient results have not been released yet. Please try again later.",
+                "timeline": {
+                    "search": "Search",
+                    "verifification": "Verification",
+                    "viewing": "Viewing"
+                },
+                "message": {
+                    "proceed": "Proceed to verification",
+                    "verified": "Patient Transaction Date has been verified!",
+                    "errorSearch": "Patient not found. Please double-check the patient transaction number.",
+                    "errorVerify": "Patient Transaction Date could not be verified."
+                }
             }
         ]
 
@@ -440,6 +459,25 @@
                         "search":"Hanapin"
                     }
                 ]
+            },
+            {
+                "id": 9,
+                "title": "Resulta ng Laboratoryo",
+                "patient": "Pasyente",
+                "transaction": "Transaksyon",
+                "list": "Listahan ng mga maaring makita na resulta",
+                "notFound": "Hindi pa nailalabas ang mga resulta ng pasyente. Pakisubukang muli mamaya.",
+                "timeline": {
+                    "search": "Hanapin",
+                    "verifification": "I-Verify",
+                    "viewing": "Resulta"
+                },
+                "message": {
+                    "proceed": "Magpatuloy sa beripikasyon",
+                    "verified": "Ang petsa ng transaksyon ng pasyente ay napatunayan na!",
+                    "errorSearch": "Hindi mahanap ang pasyente. Pakisuri muli ang numero ng transaksyon ng pasyente",
+                    "errorVerify": "Hindi makumpirma ang petsa ng transaksyon ng pasyente."
+                }
             }
         ]
 
