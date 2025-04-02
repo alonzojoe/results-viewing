@@ -8,6 +8,7 @@ import List from "./components/List";
 import { PatientContext } from "../../context/Patient/patient-context";
 import { useContext } from "react";
 import Pagination from "../../components/Pagination";
+import Footer from "./components/Footer";
 
 const Results = () => {
   const [activeTab, setActiveTab] = useState(2);
@@ -42,6 +43,7 @@ const Results = () => {
           <List />
         )}
       </div>
+      <Footer />
     </div>
   );
 };
