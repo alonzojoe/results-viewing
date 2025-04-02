@@ -7,7 +7,7 @@ import Verification from "./components/Verification";
 import List from "./components/List";
 import { PatientContext } from "../../context/Patient/patient-context";
 import { useContext } from "react";
-import Pagination from "../../components/Pagination";
+import LanguageSelector from "./components/LanguageSelector";
 import Footer from "./components/Footer";
 
 const Results = () => {
@@ -25,26 +25,27 @@ const Results = () => {
   }, [data]);
 
   return (
-    <div>
-      <LogoContainer>
-        <img src={LogoImg} alt="JBLMGH - OKOPD" />
-      </LogoContainer>
-      <div className="py-5 gap-2 qr-container transition-fade-in">
-        <h2 className="d-flex justify-content-center align-self-center mb-4">
-          Laboratory Results
-        </h2>
-        <Timeline selectedId={activeTab} />
-        <hr />
-        {activeTab === 1 ? (
-          <Search />
-        ) : activeTab === 2 ? (
-          <Verification />
-        ) : (
-          <List />
-        )}
+      <div>
+        <LogoContainer>
+          <img src={LogoImg} alt="JBLMGH - OKOPD" />
+        </LogoContainer>
+        <div className="py-5 gap-2 qr-container transition-fade-in">
+          <h2 className="d-flex justify-content-center align-self-center mb-4">
+            Laboratory Results
+          </h2>
+          <Timeline selectedId={activeTab} />
+          <hr />
+          {activeTab === 1 ? (
+            <Search />
+          ) : activeTab === 2 ? (
+            <Verification />
+          ) : (
+            <List />
+          )}
+        </div>
+        <LanguageSelector />
+        <Footer />
       </div>
-      <Footer />
-    </div>
   );
 };
 
