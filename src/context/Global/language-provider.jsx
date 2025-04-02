@@ -6,7 +6,8 @@ const toast = new Toast();
 const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(null);
   const selectLanguage = async (type = "en") => {
-    const selectedLanguage = type === "en" ? `English` : "Filipino";
+    const selectedLanguage =
+      type === "en" ? `Selected Language: English` : "Piniling Wika: Filipino";
 
     try {
       const res = await axios.get(`/opd/lab/language.json?rand=${Date.now()}`, {

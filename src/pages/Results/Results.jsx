@@ -46,6 +46,7 @@ const Results = () => {
         )}
       </div>
       <LanguageSelector />
+      {JSON.stringify(language)}
       <Footer />
     </div>
   );
