@@ -45,7 +45,6 @@ const Results = () => {
           <List />
         )}
       </div>
-      {JSON.stringify(language)}
       <LanguageSelector />
       <Footer />
     </div>

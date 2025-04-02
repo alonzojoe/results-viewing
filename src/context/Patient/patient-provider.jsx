@@ -3,6 +3,9 @@ import { ACTIONS } from "../../constants";
 import { PatientContext } from "./patient-context";
 import api from "../../services/api";
 import Swal from "sweetalert2";
+import { Toast } from "../../constants/index";
+
+const toast = new Toast();
 
 const initialState = {
   patient: null,
@@ -44,21 +47,8 @@ const PatientProvider = ({ children }) => {
         type: ACTIONS.SET_PATIENT,
         payload: { data: await res.data.data },
       });
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        },
-      });
-      Toast.fire({
-        icon: "success",
-        title: "Proceed to verification",
-      });
+
+      toast.message("success", "Proceed to verification");
     } catch (error) {
       console.log(error?.message);
       Swal.fire({
@@ -83,21 +73,8 @@ const PatientProvider = ({ children }) => {
         type: ACTIONS.SET_VERIFIED,
         payload: {},
       });
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        },
-      });
-      Toast.fire({
-        icon: "success",
-        title: "Patient Transaction Date has been verified!",
-      });
+
+      toast.message("success", "Patient Transaction Date has been verified!");
     } catch (error) {
       console.log(error?.message);
       Swal.fire({

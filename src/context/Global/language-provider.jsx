@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import LanguageContext from "./language-context";
 import axios from "axios";
-
+import { Toast } from "../../constants";
+const toast = new Toast();
 const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(null);
   const selectLanguage = async (type = "en") => {
+    const selectedLanguage = type === "en" ? `English` : "Filipino";
+
     try {
       const res = await axios.get(`/opd/lab/language.json?rand=${Date.now()}`, {
         cache: "no-cache",
@@ -17,6 +20,7 @@ const LanguageProvider = ({ children }) => {
       }
 
       setLanguage(selectedLang);
+      toast.message("success", selectedLanguage, "bottom-end");
     } catch (e) {
       console.log(`Error: ${e.message}`);
     }
