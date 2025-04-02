@@ -1,12 +1,12 @@
-const PatientInfo = ({ patient }) => {
+const PatientInfo = ({ patient, label }) => {
   const { FullName, TransactionNo } = patient;
   return (
     <div className="mb-2">
       <div>
-        Patient: <span className="fw-semibold">{FullName}</span>
+        {label.patient} <span className="fw-semibold">{FullName}</span>
       </div>
       <div>
-        TransationNo: <span className="fw-semibold">{TransactionNo}</span>
+        {label.transaction} <span className="fw-semibold">{TransactionNo}</span>
       </div>
     </div>
   );

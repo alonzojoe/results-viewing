@@ -1,0 +1,492 @@
+[
+    {
+        "language": "en",
+        "data": [
+            {
+                "id": 0,
+                "nav": [
+                    {
+                        "home": "Home",
+                        "services": "Services",
+                        "policy": "Policy",
+                        "telecode": "OKOPD Queue",
+                        "viewappointment": "View Appointment",
+                        "getappointment": "Get Appointment"
+                    }
+                ]
+            },
+
+            {
+                "id": 1,
+                "home": [
+                    {
+                        "maintext": "Online Out-Patient",
+                        "secondtext": "Check-up Scheduling System",
+                        "mainbutton": "Get your appointment here"
+                    }
+                ]
+
+            },
+            {
+                "id": 2,
+                "policy": [
+                    {
+                        "title": "Data Privacy Policy",
+                        "title1": "What we collect",
+                        "title2": "OPD Appointment",
+                        "title3": "MEDIX Hospital Information System",
+                        "title4": "What we do with the information we gather",
+                        "title5": "Security",
+                        "title6": "How to use cookies",
+                        "title7": "Links to other websites",
+
+                        "act": "This privacy policy Republic Act No. 10173, otherwise known as Data Privacy Act of 2012 sets out how Jose B. Lingad Memorial Regional Hospital uses and protects any information that you give Jose B. Lingad Memorial Regional Hospital when you use this website. Jose B. Lingad Memorial Regional Hospital is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.",
+
+                        "content1": "We may collect the following information:",
+
+                        "content2": "Full Name, Birthday, Gender, Province",
+                        "content3": "Contact information including Email address",
+                        "content4": "Other information relevant to Patient's Appointment such as Type of Service, Date and Time of Schedule",
+
+                        "content5": "Full Name, Birthday, Gender, Province, Civil Status",
+                        "content6": "Contact information, Contact person",
+                        "content7": "Medical Information (Diagnosis, Laboratory and Radiology Result, Pharmacy and Medical Supplies Request)",
+                        "content8": "PHILHEALTH information (if member)",
+
+                        "content9": "We require this information to understand your needs and provide you with a better service, and in particular for the following reasons:",
+                        "content10": "Internal record keeping",
+                        "content11": "We may use the information to improve our services.",
+                        "content12": "We may use the information for research and training purposes.",
+                        "content13": "We may use the information to customize the website according to your interests.",
+                        "content14": "We will never sell your information.",
+
+                        "content15": "We are committed to ensuring that your information is secure. In order to prevent unauthorized access or disclosure we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.",
+
+                        "content16": "A cookie is a small file which asks permission to be placed on your computer's hard drive. Once you agree, the file is added and the cookie helps analyze web traffic or lets you know when you visit a particular site. Cookies allow web applications to respond to you as an individual. The web application can tailor its operations to your needs, likes and dislikes by gathering and remembering information about your preferences.",
+                        "content17": "We use traffic log cookies to identify which pages are being used. This helps us analyze data about web page traffic and improve our website in order to tailor it to customer needs. We only use this information for statistical analysis purposes and then the data is removed from the system.",
+                        "content18": "Overall, cookies help us provide you with a better website, by enabling us to monitor which pages you find useful and which you do not. A cookie in no way gives us access to your computer or any information about you, other than the data you choose to share with us.",
+                        "content19": "You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full advantage of the website.",
+
+                        "content20": "Our website may contain links to enable you to visit other websites of interest easily. However, once you have used these links to leave our site, you should note that we do not have any control over that other website. Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst visiting such sites and such sites are not governed by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in question."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "viewappoinment":[
+                    {
+                        "title": "View Appointment",
+                        "modaltitle": "Search Details",
+                        "mobile": "Enter Mobile Number",
+                        "dateofbirth": "Enter Date of Birth",
+                        "search": "Search Appointment",
+                        "notfound": "No Appointment Found"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "registration":[
+                    {
+                        "lname": "Last Name",
+                        "fname": "First Name",
+                        "mname": "Middle Name",
+                        "suffix": "Suffix",
+                        "gender": "Gender",
+                        "dob": "Date of Birth",
+                        "contact": "Mobile Number",
+                        "altcontact": "Alternative Mobile Number",
+                        "cstatus": "Civil Status",
+                        "nat": "Nationality",
+                        "pob": "Place of Birth",
+                        "street": "Street",
+                        "province": "Province",
+                        "municipality": "City / Municipality",
+                        "barangay": "Barangay",
+                        "chiefcomplaint": "Reason for Consultation",
+                        "previous": "Previous",
+                        "next": "Next",
+                        "save": "Save",
+                        "back": "Back",
+                        "search": "Search",
+
+                        "infotitle": "Check-up Information",
+                        "tservice": "Type of Service",
+                        "dschedule": "Date of Schedule",
+                        "tschedule": "Time of Schedule",
+                        "purpose": "Purpose of Appointment",
+
+                        "type1": "New Patient",
+                        "type2": "Old Patient",
+
+                        "consent1": "CONSENT FOR JBLMGH ON-LINE CONSULTATION",
+                        "consent2": "I give my full consent to undergo the Online Konsulta for Outpatient Department (OK-OPD) at Jose B. Lingad Memorial General Hospital (JBLMGH).",
+                        "consent3": "I fully understand that this ONLINE CONSULTATION caters to patients with non-emergency and non-life- threatening conditions only. This is secondary to an actual face-to-face consultation and cannot replace consultation/s that need/s a comprehensive physical examination and/or immediate medical attention.",
+                        "consent4": "I fully understand that ONLINE CONSULTATION is being done to lessen the risk of exposure from infectious diseases that can be acquired if I personally go to the hospital.",
+                        "consent5": "I fully understand that the clinical history, virtual examination, assessment and recommendations of the doctor will be based entirely on the information or data that I will provide during the duration of the ONLINE CONSULTATION.",
+                        "consent6": "I fully understand that the ONLINE CONSULTATION has its limitations and the personnel staff and doctors will have no liability whatever my outcome may be after the ONLINE CONSULTATION.",
+                        "consent7": "I fully understand that the information or data that I will provide will remain private and confidential in accordance with the Data Privacy Act but can be used by the hospital and doctors for research purposes and for the improvement of our healthcare system conditions.",
+                        "consent8": "I fully understand that I will not be issued an electronic medical certificate by using the OK-OPD ONLINE CONSULTATION. I understand that I can acquire a hard copy of the medical certificate through self-pick up at JBLMGH but shall be limited only to financial assistance, referral, and reference purposes only.",
+                        "consent9": "I fully understand that the OK-OPD ONLINE CONSULTATION and its processes may include but are not limited to the actual video consultation, audio, and calls from our representatives. The OK-OPD by JBLMGH has the authority to process, utilize and store such recordings for quality control, audit, defense of legal claims, and for other legal and valid purposes.",
+                        "consent10": "YES, I UNDERSTAND.",
+                        "consent11": "Click the button if you Agree and fully understand the consent form.",
+                        "consent12": "I Agree",
+
+                        "opdconsenttitle": "NOTICE",
+
+                        "opdconsent1": "The JBLMGH OPD Online Appointment System allows patients to request an appointment at the Outpatient Department (OPD) via the internet. Please carefully review the following guidelines before scheduling an appointment:",
+                        "opdconsent2": "Eligibility – This system is open for use by all patients.",
+                        "opdconsent3": "Complete Information – Ensure that all required information is accurately provided when booking an appointment.",
+                        "opdconsent4": "Appointment Limit – Patients may only schedule one appointment per week under the same clinic.",
+                        "opdconsent5": "Viewing, Cancellation and Rescheduling – If you wish to view cancel or reschedule your appointment, please do so via the following link: ",
+                        "opdconsent6": "Limited Slots – Appointment slots are limited per day and are allocated on a first-come, first-served basis. The system will provide the earliest available slot unless you indicate a preferred date. If your preferred date is already full, you will automatically be assigned the next earliest available slot.",
+                        "opdconsent7": "Proof of Appointment – Please print or take a screenshot of your confirmed appointment schedule and present it at the Triage area on the day of your visit.",
+                        "opdconsent8": "Adherence to Schedule – Patients must strictly follow their assigned appointment schedule. Walk-ins are discouraged, as not all clinics operate daily.",
+                        "opdconsent9": "Additionally, recording videos, audio, calls, or capturing photos during the consultation and its related processes is strictly prohibited.",
+                        "opdconsent10": "We appreciate your cooperation.",
+
+                        "opdconsenttexttitle": "CONSENT FOR REGISTRATION AND PROCESSING OF INFORMATION",
+                        "opdconsenttext1": "In accordance with Republic Act 10173 or the Data Privacy Act of 2012, I, ",
+                        "opdconsenttext2": ", hereby authorize the administration of Jose B. Lingad Memorial General Hospital, through its authorized personnel, to process my personal information for medical training, research, and the advancement of knowledge in the treatment of my condition.",
+                        "opdconsenttext3": "I fully understand everything stated herein and agree to the terms regarding the processing of my personal information, including that of my authorized representative.",
+                        "opdconsenttextbutton": "I agree",
+
+                        "qr1": "Click on the 'Choose File' button.",
+                        "qr2": "Either take a picture of the QR code or upload the QR image.",
+                        "qr3": "Finally, click the 'Scan Image' button.",
+                        "qr4": "Scan Image"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "services": [
+                    {
+                        "title":"Out Patient Services"
+                    }
+                ]
+            },
+
+            {
+                "id": 6,
+                "success": [
+                    {
+                        "okopdtext1":"Your ONLINE KONSULTA registration has been completed",
+                        "okopdtext2":"Please await a confirmation call for your appointment",
+                        "okopdtext3":"within the scheduled date",
+                        "okopdtext4":"Thank you",
+                        
+                        "opdtext1":"Your OPD Appointment registration has been completed at",
+                        "opdtext2":"on",
+                        "opdtext3":"Thank you for trusting Jose B. Lingad Memorial General Hospital",
+                        "opdtext4":"Reminder: Please print or take a screen shot of your schedule and show this at the OPD Triage on your appointment day.",
+
+                        "opdtextnew1":"Hello!",
+                        "opdtextnew2":"Your check-up schedule request is now being processed.",
+                        "opdtextnew3":"You will receive a text confirmation or a call from us within 36 hours.",
+                        "opdtextnew4":"Please save this link: ",
+                        "opdtextnew5":" to check your appointment schedule in case you do not receive a text confirmation or call at the designated time.",
+                        "opdtextnew6":"Thank you!",
+                        "opdtextnew7":"Reminder: Please print or take a screen shot of your schedule and show this at the OPD Triage on your appointment day."
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "appointmenttype": [
+                    {
+                        "title":"GET YOUR APPOINTMENT",
+                        "button":"ONLINE CONSULTATION",
+                        "button2":"FACE TO FACE CONSULTATION",
+                        "button3":"EHSM CONSULTATION"
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "queue": [
+                    {
+                        "title":"Please wait, you are currently registered and in the queue",
+                        "subtitle":"Your status will change once your doctor is available",
+                        "button":"Not Yet Available",
+                        "title2":"Your Doctor is now available",
+                        "subtitle2":"Please click button below to start your check-up",
+                        "button2":"Start Consultation",
+                        "dateofbirth":"Date of Birth",
+                        "search":"Search"
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "title": "Laboratory Results",
+                "patient": "Patient",
+                "transaction": "Transaction No:",
+                "transaction_date": "Transaction Date:",
+                "list": "List of available results",
+                "notFound": "Patient results have not been released yet. Please try again later.",
+                "timeline": {
+                    "search": "Search",
+                    "verification": "Verify",
+                    "viewing": "Viewing"
+                },
+                "message": {
+                    "proceed": "Proceed to verification",
+                    "verified": "Patient Transaction Date has been verified!",
+                    "errorSearch": "Patient not found. Please double-check the patient transaction number.",
+                    "errorVerify": "Patient Transaction Date could not be verified."
+                },
+                "wrong": "Something went wrong. Please try again later."
+            }
+        ]
+
+    },
+
+    {
+        "language": "fil",
+        "data": [
+            {
+                "id": 0,
+                "nav": [
+                    {
+                        "home": "Home",
+                        "services": "Serbisyo",
+                        "policy": "Patakaran",
+                        "telecode": "OKOPD Queue",
+                        "viewappointment": "Tingnan ang Appointment",
+                        "getappointment": "Kumuha ng Appointment"
+                    }
+                ]
+            },
+
+            {
+                "id": 1,
+                "home": [
+                    {
+                        "maintext": "Online na Pagkuha ng",
+                        "secondtext": "Out-Patient Check-up Schedule",
+                        "mainbutton": "Kumuha ng appointment dito"
+                    }
+                ]
+
+            },
+            {
+                "id": 2,
+                "policy": [
+                    {
+                        "title": "Patakaran ng Data Privacy",
+
+                        "title1": "Ano ang Aming Kinokolekta",
+                        "title2": "Konsultasyon sa OPD",
+                        "title3": "Impormasyon Tungkol sa MEDIX Hospital Information System",
+                        "title4": "Ano ang Aming Ginagawa sa Impormasyong Aming Kinokolekta",
+                        "title5": "Seguridad",
+                        "title6": "Paano Gamitin ang mga Cookies",
+                        "title7": "Mga Link Patungo sa Iba't Ibang mga Website",
+
+                        "act": "Ang patakaran ng privacy na ito na nilalaman ng Republic Act No. 10173, o mas kilala bilang Data Privacy Act of 2012, ay naglalatag kung paano ginagamit at inaalagaan ng Jose B. Lingad Memorial Regional Hospital ang anumang impormasyon na ibinibigay ninyo sa Jose B. Lingad Memorial Regional Hospital kapag ginagamit ninyo ang website na ito. Nakatuon ang Jose B. Lingad Memorial Regional Hospital na siguruhing protektado ang inyong privacy. Kung kami ay humiling sa inyo na magbigay ng tiyak na impormasyon na makakilala sa inyo habang ginagamit ninyo ang website na ito, maari kayong tiyakin na ito ay gagamitin lamang ayon sa patakaran ng privacy na ito.",
+
+                        "content1": "Maaring mangolekta kami ng mga sumusunod na impormasyon:",
+
+                        "content2": "Buong Pangalan, Kaarawan, Kasarian, Lalawigan",
+                        "content3": "Impormasyon upang ikaw ay makontak kasama ang Email address",
+                        "content4": "Iba pang impormasyon na may kaugnayan sa Konsultasyon ng Pasyente tulad ng Uri ng Serbisyo, Petsa, at Oras ng Iskedyul",
+
+                        "content5": "Buong Pangalan, Kaarawan, Kasarian, Lalawigan, Katayuan sa Buhay",
+                        "content6": "Impormasyon ng Contact, Kung kanino makipag-ugnayan",
+                        "content7": "Impormasyon Medikal (Diagnosis, Resulta ng Pagsusuri sa Laboratoryo at Radiolohiya, Paghingi ng Gamot at Kagamitan Medikal)",
+                        "content8": "Impormasyon tungkol sa PHILHEALTH (kung miyembro)",
+
+                        "content9": "Kinakailangan namin ang impormasyong ito upang maunawaan ang inyong mga pangangailangan at maipagkaloob sa inyo ang mas magandang serbisyo, lalo na para sa mga sumusunod na kadahilanan:",
+                        "content10": "Internal na record keeping",
+                        "content11": "Maari naming gamitin ang impormasyon upang mapabuti ang aming mga serbisyo.",
+                        "content12": "Maari naming gamitin ang impormasyon para sa mga layuning pananaliksik at pagsasanay.",
+                        "content13": "Maari naming gamitin ang impormasyon upang i-customize ang website ayon sa inyong mga interes.",
+                        "content14": "Hindi naming ipagbibili ang inyong impormasyon.",
+
+                        "content15": "Nakatuon kami na siguruhing ligtas ang inyong impormasyon. Upang maiwasan ang hindi awtorisadong pag-access o paglalabas ng impormasyon, kami ay nagpatupad ng mga angkop na pisikal, elektronikong, at pamamahala ng pamamaraan upang mapanatili at maprotektahan ang impormasyon na aming kinokolekta online.",
+
+                        "content16": "Ang cookie ay isang maliit na file na humihingi ng pahintulot upang mailagay sa hard drive ng inyong computer. Kapag pumayag kayo, idinadagdag ang file at tinutulungan ng cookie na suriin ang web traffic o ipaalam sa inyo kapag binisita ninyo ang isang partikular na site. Ang mga cookies ay nagpapahintulot sa web applications na tumugon sa inyo bilang isang indibidwal. Ang web application ay maaring baguhin ang operasyon nito ayon sa inyong mga pangangailangan, gustong aspeto, at ayaw sa pamamagitan ng pagkolekta at pag-aalala ng impormasyon tungkol sa inyong mga preference.",
+                        "content17": "Ginagamit namin ang cookies para matukoy kung aling mga pahina ang ginagamit. Ito ay tumutulong sa amin na suriin ang data tungkol sa trapiko sa pahina ng web at mapabuti ang aming website upang ma-customize ito sa mga pangangailangan ng mga kostumer. Ang impormasyong ito ay ginagamit lamang para sa mga layuning estadistikal at matapos ay tinatanggal mula sa sistema.",
+                        "content18": "Sa pangkalahatan, ang mga cookies ay tumutulong sa amin na magbigay sa inyo ng mas magandang website, sa pamamagitan ng pagtutugma nito sa mga pahina na makakatulong sa inyo at sa mga hindi. Ang cookie ay hindi nagbibigay sa amin ng access sa inyong computer o anumang impormasyon tungkol sa inyo, maliban sa mga datos na pumipili kayong ibahagi sa amin.",
+                        "content19": "Maari kayong pumili kung tatanggapin o tatanggihan ang mga cookies. Karamihan sa mga web browser ay awtomatikong tatanggap ng cookies, ngunit maari kayong magbago ng inyong mga setting sa browser upang tanggihan ang mga cookies kung nais ninyo. Gayunpaman, ito ay maaaring humadlang sa inyo na magkaruon ng buong karanasan mula sa website.",
+
+                        "content20": "Maaring maglaman ang aming website ng mga link upang mapabilis ang pagbisita ninyo sa iba't ibang mga website na maaring kayong interesado. Gayunpaman, kapag gamitin ninyo ang mga link na ito upang umalis sa aming site, mangyaring tandaan na wala kaming kontrol sa ibang website na iyon. Kaya't hindi namin kayang maging responsable sa proteksyon at privacy ng anumang impormasyon na inyong ibinibigay habang bumibisita sa mga ganitong mga site, at hindi sakop ng patakaran ng privacy na ito ang mga naturang site. Mangyaring mag-ingat at tukuyin ang patakaran ng privacy na naaayon sa website na ito."
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "viewappoinment":[
+                    {
+                        "title": "Tingnan ang Takdang Konsultasyon",
+                        "modaltitle": "Mga Detalye",
+                        "mobile": "Numero ng Telephone",
+                        "dateofbirth": "Petsa ng Kapanganakan",
+                        "search": "Hanapin",
+                        "notfound": "Walang Natagpuang Konsultasyon"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "registration":[
+                    {
+                        "lname": "Apelyido",
+                        "fname": "Pangalan",
+                        "mname": "Gitnang Pangalan",
+                        "suffix": "Suffix",
+                        "gender": "Kasarian",
+                        "dob": "Petsa ng Kapanganakan",
+                        "contact": "Numero ng Telephone",
+                        "altcontact": "Alternatibong Numero ng Telephone",
+                        "cstatus": "Katayuang Sibil",
+                        "nat": "Nasyonalidad",
+                        "pob": "Lugar ng Kapanganakan",
+                        "street": "Street",
+                        "province": "Lalawigan",
+                        "municipality": "Bayan o Lungsod",
+                        "barangay": "Barangay",
+                        "chiefcomplaint": "Dahilan ng Pagkonsulta",
+                        "previous": "Ibalik",
+                        "next": "Susunod",
+                        "save": "I-save",
+                        "back": "Ibalik",
+                        "search": "Hanapin",
+
+                        "infotitle": "Impormasyon Sa Konsultasyon",
+                        "tservice": "Uri ng Serbisyo",
+                        "dschedule": "Petsa ng Iskedyul",
+                        "tschedule": "Oras ng Iskedyul",
+                        "purpose": "Layunin",
+
+                        "type1": "Bagong Pasyente",
+                        "type2": "May Record Na",
+
+                        "consent1": "CONSENT PARA SA ON-LINE CONSULTATION NG JBLMGH",
+                        "consent2": "Ako ay nagbibigay ng aking buong pahintulot upang sumailalim sa ONLINE KONSULTA ng OPD (OK-OPD) sa Jose B. Lingad Memorial General Hospital (JBLMGH).",
+                        "consent3": "Lubos kong nauunawaan na ang ONLINE KONSULTASYON ay para sa mga pasyenteng may mga kondisyon na hindi emergency at hindi nagdadala ng panganib sa buhay. Ito ay pumapangalawa lamang sa aktwal na “face-to-face” konsultasyon at hindi maaaring gawin kapalit ng mga konsultasyon na nangangailangan ng komprehensibong eksaminasyon at agarang atensyong medikal.",
+                        "consent4": "Lubos kong nauunawaan na isinasagawa ang ONLINE KONSULTASYON upang bawasan ang panganib ng pagkahawa sa mga nakakahawang sakit na maaaring makuha kung pupunta ako mismo ng personal sa ospital.",
+                        "consent5": "Lubos kong nauunawaan na ang pagkuha ng kasaysayan ng aking sakit, birtwal na eksaminasyon, pagsusuri or pagtatasa, at mga rekomendasyon ng doktor ay magiging batay lamang sa impormasyon at datos na aking ibibigay sa panahon ng ONLINE KONSULTASYON.",
+                        "consent6": "Lubos kong nauunawaan na may mga limitasyon ang ONLINE KONSULTASYON at walang magiging pananagutan ang mga tauhan at mga doktor sa magiging resulta ng aking kondisyon pagkatapos ng aking ONLINE KONSULTASYON.",
+                        "consent7": "Lubos kong nauunawaan na mananatiling pribado at kumpidensiyal ang impormasyon o datos na aking ibibigay alinsunod sa “Data Privacy Act” ngunit maaring gamitin ng ospital at mga doktor para sa mga layuning pananaliksik at pagpapabuti ng kalagayan ng sistema ng pangangalaga sa kalusugan.",
+                        "consent8": "Lubos kong nauunawaan na hindi ako mabibigyan ng electronik medical certificate sa pamamagitan ng paggamit ng OK-OPD ONLINE KONSULTASYON. Nauunawaan ko din na maaari akong makakuha ng pisikal na kopya ng medical certificate sa pamamagitan ng personal na pagkuha nito sa JBLMGH ngunit limitado lamang sa layuning para sa tulong pinansiyal, “referral”, o basehan. ",
+                        "consent9": "Lubos kong nauunawaan na ang OK-OPD ONLINE KONSULTASYON at ang mga proseso nito ay maaaring sumaklaw ngunit hindi limitado sa aktwal na video konsultasyon, audio, o tawag mula sa aming mga kinatawan. Ang OK-OPD ng JBLMGH ay may awtoridad na i-proseso at gamitin para sa pagpapanatili ng kalidad, pagsusuri, depensa ng mga legal na reklamo, at iba pang legal at wastong layunin.",
+                        "consent10": "NAUUNAWAAN KO.",
+                        "consent11": "Pindutin ang kahon kung ikaw ay sumasang-ayon at lubos ninyong nauunawaan ang pahintulot.",
+                        "consent12": "Ako'y Sumasang-ayon",
+                        
+                        "opdconsenttitle": "PAUNAWA",
+
+                        "opdconsent1": "Ang JBLMGH OPD Online Appointment System ay nagbibigay-daan sa mga pasyente upang magkaroon ng iskedyul ng appointment sa Outpatient Department (OPD) sa pamamagitan ng internet. Mangyaring basahin at sundin ang mga sumusunod na alituntunin bago magpa-appointment:",
+                        "opdconsent2": "Kwalipikasyon – Ang sistemang ito ay bukas para sa lahat ng pasyente.",
+                        "opdconsent3": "Kumpletong Impormasyon – Siguraduhing wasto at kumpleto ang lahat ng hinihinging impormasyon sa pagbu-book ng appointment.",
+                        "opdconsent4": "Limitasyon ng Appointment – Ang bawat pasyente ay maaari lamang magkaroon ng isang appointment bawat linggo sa parehong klinika.",
+                        "opdconsent5": "Pagtingin, Kanselasyon at Pagre-reschedule – Kung nais mong makita, kanselahin o i-reschedule ang iyong appointment, gamitin ang sumusunod na link: ",
+                        "opdconsent6": "Limitadong Slots – Limitado ang mga appointment slots bawat araw at ito ay ibinibigay sa first-come, first-served na batayan. Ang ibibigay na slot ay ang pinakamaagang available na iskedyul, maliban kung may inilagay kang nais na petsa. Kung puno na ang iyong nais na petsa, awtomatikong ibibigay sa iyo ang susunod na pinakamalapit na available slot.",
+                        "opdconsent7": "Katibayan ng Appointment – Mangyaring iprinta o kunan ng screenshot ang kumpirmadong iskedyul ng iyong appointment at ipakita ito sa Triage area sa araw ng iyong pagbisita.",
+                        "opdconsent8": "Pagsunod sa Itinakdang Oras – Mahigpit na sundin ang iyong itinakdang appointment schedule. Iwasang mag-walk-in sa ibang araw dahil hindi lahat ng klinika ay bukas araw-araw.",
+                        "opdconsent9": "Paalala: Mahigpit na ipinagbabawal ang pagre-record ng video, audio, tawag, o pagkuha ng larawan sa panahon ng konsultasyon at iba pang kaugnay na proseso.",
+                        "opdconsent10": "Maraming salamat sa inyong pakikiisa.",
+
+                        "opdconsenttexttitle": "PAHINTULOT NG PAGPAPATALA AT PAGPOPROSESO NG IMPORMASYON",
+                        "opdconsenttext1": "Alinsunod sa Republic Act 10173 o Data Privacy Act of 2012, ako si ",
+                        "opdconsenttext2": ", ay pinahihintulutan ang pangasiwaang ng JOSE B. LINGAD MEMORIAL GENERAL HOSPITAL sa pamamagitan ng kanyang mga awtorisadong kawani, ang pagpoproseso ng aking personal na impormasyon para sa pagsasanay medikal, pananaliksik at pagpapalawak ng kaalaman sa paggamot ng aking karamdaman.",
+                        "opdconsenttext3": "Naiintindihan ko ang lahat ng nakasulat at sumasang-ayon ako sa mga inilahad hinggil sa pagpoproseso ng akin personal na impormasyon maging ng aking awtorisadong kinatawan.",
+                        "opdconsenttextbutton": "Sumasang-ayon ako",
+
+                        "qr1": "I-click ang 'Choose File'",
+                        "qr2": "Maaring kunan ng litrato ang QR code o i-upload ang larawan ng QR.",
+                        "qr3": "Sa huli, i-click ang 'I-scan ang Larawan' na pindutan.",
+                        "qr4": "I-scan ang Larawan"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "services": [
+                    {
+                        "title":"Mga Serbisyo sa Out Patient"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "success": [
+                    {
+                        "okopdtext1": "Ang inyong ONLINE KONSULTA ay matagumpay na rehistro.",
+                        "okopdtext2": "Mangyaring maghintay para sa tawag na kumpirmasyon para sa inyong",
+                        "okopdtext3": "appointment sa loob ng nakatakdang petsa, ",
+                        "okopdtext4": "Salamat",
+
+                        "opdtext1": "Ang inyong OPD Appointment ay matagumpay na narehistro sa",
+                        "opdtext2": "sa nakatakdang petsa",
+                        "opdtext3": "Salamat sa pagtitiwala sa Jose B. Lingad Memorial General Hospital",
+                        "opdtext4": "Paalala: Mangyaring mag-print o kumuha ng screenshot ng inyong iskedyul at ipakita ito sa OPD Triage sa araw ng inyong appointment.",
+
+                        "opdtextnew1": "Mabuhay!",
+                        "opdtextnew2": "Ang inyong request para sa iskedyul ng chek-up ay kasalukuyan ng pinoproseso.",
+                        "opdtextnew3": "Kayo ay makatatangap ng text confirmation o tawag mula sa amin sa loob ng 36 na oras.",
+                        "opdtextnew4": "Mangyaring paki-save ang link na ito ",
+                        "opdtextnew5": " upang ma-check ang iyong appointment schedule kung sakaling hindi makatanggap ng text confirmation o tawag sa itinakdang oras.",
+                        "opdtextnew6": "Maraming Salamat po.",
+                        "opdtextnew7": "Paalala: Mangyaring mag-print o kumuha ng screenshot ng inyong iskedyul at ipakita ito sa OPD Triage sa araw ng inyong appointment."
+                        
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "appointmenttype": [
+                    {
+                        "title": "KUMUHA NG APPOINTMENT",
+                        "button": "ONLINE KONSULTASYON",
+                        "button2": "FACE TO FACE NA KONSULTASYON",
+                        "button3": "EHSM KONSULTASYON"
+                        
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "queue": [
+                    {
+                        "title":"Mangyaring maghintay, ikaw ay kasalukuyang rehistrado at nasa pila",
+                        "subtitle":"Ang status ay magbabago kapag available na ang iyong doktor",
+                        "button":"Hindi pa Available",
+                        "title2":"Ang Iyong Doktor ay available na ngayon",
+                        "subtitle2":"Mangyaring i-click ang pindutan sa ibaba upang simulan ang iyong konsultasyon",
+                        "button2":"Simulan ang Konsultasyon",
+                        "dateofbirth":"Petsa ng Kapanganakan",
+                        "search":"Hanapin"
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "title": "Mga Resulta ng Laboratoryo",
+                "patient": "Pasyente",
+                "transaction": "Numero ng Transaksyon:",
+                "transaction_date": "Petsa ng Transaction:",
+                "list": "Listahan ng mga maaring makita na resulta",
+                "notFound": "Hindi pa nailalabas ang mga resulta ng pasyente. Pakisubukang muli mamaya.",
+                "timeline": {
+                    "search": "Hanapin",
+                    "verification": "I-Verify",
+                    "viewing": "Resulta"
+                },
+                "message": {
+                    "proceed": "Magpatuloy sa beripikasyon",
+                    "verified": "Ang petsa ng transaksyon ng pasyente ay nakumpirma na!",
+                    "errorSearch": "Hindi mahanap ang pasyente. Pakisuri muli ang numero ng transaksyon ng pasyente",
+                    "errorVerify": "Hindi makumpirma ang petsa ng transaksyon ng pasyente."
+                },
+                "wrong": "May naganap na problema. Pakisubukang muli mamaya."
+
+            }
+        ]
+
+    }
+    
+
+]

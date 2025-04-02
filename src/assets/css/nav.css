@@ -1,4 +1,7 @@
 .language {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background-color: #fff;
     font-weight: 600;
     border-radius: 50px;
@@ -34,9 +37,12 @@
     z-index: 600;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     cursor: pointer;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
 }
 
 a.burger-menu {
@@ -45,6 +51,7 @@ a.burger-menu {
     text-align: right;
     float: right;
 }
+
 .main-menu {
     display: none;
     text-align: right;
@@ -94,22 +101,22 @@ a.burger-menu {
     border-right: 0px solid #fff;
 }
 
-.header-menu ul li:last-child a{
+.header-menu ul li:last-child a {
     cursor: pointer;
     color: #fff;
 }
 
-.header-menu ul li:last-child a:hover{
+.header-menu ul li:last-child a:hover {
     color: #8ef1ff;
 }
 
-.header-menu ul li:last-child:hover ul{
+.header-menu ul li:last-child:hover ul {
     opacity: 1;
     transition: 0.5s;
     visibility: visible;
 }
 
-.header-menu ul li ul{
+.header-menu ul li ul {
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -117,21 +124,21 @@ a.burger-menu {
     width: 180px;
 }
 
-.header-menu ul li ul li{
+.header-menu ul li ul li {
     display: block;
     text-align: left;
-    margin:0;
+    margin: 0;
     padding: 8px 18px;
     border: 0;
     width: 100%;
     background-color: #4573c0;
 }
 
-.header-menu ul li ul li:first-child{
+.header-menu ul li ul li:first-child {
     padding-top: 14px;
 }
 
-.header-menu ul li ul li:last-child{
+.header-menu ul li ul li:last-child {
     margin-left: 0;
     padding-bottom: 14px;
     border-radius: 0px 0px 4px 4px;
@@ -199,14 +206,15 @@ a.burger-menu {
     cursor: pointer;
 }
 
-#mobile-menu-wrap a{
+#mobile-menu-wrap a {
     color: #fff !important;
     text-decoration: none !important;
     text-transform: uppercase;
     font-size: 16px;
     cursor: pointer;
 }
-#mobile-menu-wrap .col-11{
+
+#mobile-menu-wrap .col-11 {
     padding-right: 35px;
 }
 
@@ -256,6 +264,7 @@ footer ul li:last-child {
 footer .left-content {
     text-align: center;
 }
+
 footer .right-content {
     text-align: center;
 }

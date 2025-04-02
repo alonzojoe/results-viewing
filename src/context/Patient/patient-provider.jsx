@@ -1,8 +1,12 @@
-import { useReducer } from "react";
+import { useReducer, useContext } from "react";
+import LanguageContext from "../Global/language-context";
 import { ACTIONS } from "../../constants";
 import { PatientContext } from "./patient-context";
 import api from "../../services/api";
 import Swal from "sweetalert2";
+import { Toast } from "../../constants/index";
+
+const toast = new Toast();
 
 const initialState = {
   patient: null,
@@ -33,6 +37,10 @@ const patientReducer = (state, action) => {
 
 const PatientProvider = ({ children }) => {
   const [patient, dispatchPatient] = useReducer(patientReducer, initialState);
+  const { language } = useContext(LanguageContext);
+
+  const msg = language?.data[9]?.message;
+  console.log("msg", msg);
 
   const searchPatient = async (params) => {
     try {
@@ -44,26 +52,13 @@ const PatientProvider = ({ children }) => {
         type: ACTIONS.SET_PATIENT,
         payload: { data: await res.data.data },
       });
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        },
-      });
-      Toast.fire({
-        icon: "success",
-        title: "Proceed to verification",
-      });
+
+      toast.message("success", msg.proceed);
     } catch (error) {
       console.log(error?.message);
       Swal.fire({
-        title: "404 Not Found",
-        text: "Patient not found. Please double-check the patient transaction number.",
+        title: "404",
+        text: msg.errorSearch,
         icon: "error",
       });
     }
@@ -83,26 +78,13 @@ const PatientProvider = ({ children }) => {
         type: ACTIONS.SET_VERIFIED,
         payload: {},
       });
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        },
-      });
-      Toast.fire({
-        icon: "success",
-        title: "Patient Transaction Date has been verified!",
-      });
+
+      toast.message("success", msg.verified);
     } catch (error) {
       console.log(error?.message);
       Swal.fire({
-        title: "404 Not Found",
-        text: "Patient Transaction Date could not be verified.",
+        title: "404",
+        text: msg.errorVerify,
         icon: "error",
       });
     }

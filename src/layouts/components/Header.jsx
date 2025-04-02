@@ -1,8 +1,32 @@
 import appLogo from "../../assets/images/appLogo.png";
 import useToggle from "../../hooks/useToggle";
+import LanguageContext from "../../context/Global/language-context";
+import { useContext } from "react";
 
 const Header = () => {
   const [header, toggleHeader] = useToggle();
+  const { language } = useContext(LanguageContext);
+
+  const navObject = language?.data[0].nav[0];
+
+  // const navLinks = useMemo(() => {
+  //   return Object.entries(navObject) ?? [];
+  // }, [navObject]);
+
+  console.log("nav", language);
+  console.log("navObject", navObject);
+  console.log("navObject type", typeof navObject);
+
+  const navItems =
+    typeof navObject === "object"
+      ? Object.entries(navObject).map(([key, value], index) => ({
+          id: index + 1,
+          path: `/${key}`,
+          name: value,
+        }))
+      : [];
+
+  console.log("navItems", navItems);
 
   return (
     <>
@@ -16,30 +40,11 @@ const Header = () => {
             <div className="col-10">
               <nav className="main-menu">
                 <ul>
-                  <li>
-                    <a>Home</a>
-                  </li>
-                  <li>
-                    <a>Services</a>
-                  </li>
-                  <li>
-                    <a>Policy</a>
-                  </li>
-                  <li>
-                    <a>OKOPD Queue</a>
-                  </li>
-                  <li>
-                    <a>View Appointment</a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      data-bs-toggle="modal"
-                      data-bs-target="#staticBackdrop"
-                    >
-                      Get Appointment
-                    </a>
-                  </li>
+                  {navItems.map((nav) => (
+                    <li key={nav.id}>
+                      <a>{nav.name}</a>
+                    </li>
+                  ))}
                 </ul>
               </nav>
               <div id="mobile-menu-wrap" className="row">

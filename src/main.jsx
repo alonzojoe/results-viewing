@@ -10,11 +10,14 @@ import "sweetalert2/dist/sweetalert2.min.css";
 
 import App from "./App.jsx";
 import PatientProvider from "./context/Patient/patient-provider.jsx";
+import LanguageProvider from "./context/Global/language-provider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <PatientProvider>
-      <App />
-    </PatientProvider>
+    <LanguageProvider>
+      <PatientProvider>
+        <App />
+      </PatientProvider>
+    </LanguageProvider>
   </StrictMode>
 );
