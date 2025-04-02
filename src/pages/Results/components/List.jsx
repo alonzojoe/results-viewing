@@ -6,7 +6,7 @@ import useFetch from "./../../../hooks/useFetch";
 import Pagination from "../../../components/Pagination";
 import PatientInfo from "../../../components/PatientInfo";
 const PER_PAGE = 10;
-const List = () => {
+const List = ({ language }) => {
   const { patient: data } = useContext(PatientContext);
   const { patient } = data;
   const PatientHistoryID = patient[0]?.PatientHistoryID;
@@ -49,23 +49,34 @@ const List = () => {
     }
   }, [results, state.currentPage]);
 
+  const labelPatient = language?.data[9]?.transaction;
+  const btnTitle = language?.data[9]?.timeline["search"];
+
+  const label = {
+    patient: language?.data[9]?.patient,
+    transaction: language?.data[9]?.transaction,
+    list: language?.data[9]?.list,
+    wrong: language?.data[9]?.wrong,
+    notFound: language?.data[9]?.notFound,
+  };
+
   return (
     <>
-      <PatientInfo patient={patient[0]} />
+      <PatientInfo label={label} patient={patient[0]} />
 
-      <TitleContainer title="List of available results" />
+      {!error && state.display.length > 0 && (
+        <TitleContainer title={`${label.list}:`} />
+      )}
       <div className="btn-container mt-2 text-center">
         {loading ? (
-          <div>
+          <div className="mt-3">
             <div className="spinner-border text-primary" role="status">
               <span className="visually-hidden">Loading...</span>
             </div>
           </div>
         ) : error ? (
-          <div>
-            <p className="text text-danger">
-              Something went wrong. <br /> Please try again later
-            </p>
+          <div className="mt-3">
+            <p className="text text-danger fw-bold">{label.wrong}</p>
           </div>
         ) : (
           <table className="mb-3">
@@ -93,11 +104,8 @@ const List = () => {
                 ))
               ) : (
                 <tr>
-                  <td className="text-center text-danger" colSpan={3}>
-                    <p>
-                      Patient results have not been released yet. Please try
-                      again later.
-                    </p>
+                  <td className="text-center fw-bolder text-danger" colSpan={3}>
+                    <p>{label.notFound}</p>
                   </td>
                 </tr>
               )}

@@ -235,7 +235,8 @@
                     "verified": "Patient Transaction Date has been verified!",
                     "errorSearch": "Patient not found. Please double-check the patient transaction number.",
                     "errorVerify": "Patient Transaction Date could not be verified."
-                }
+                },
+                "wrong": "Something went wrong. Please try again later."
             }
         ]
 
@@ -479,7 +480,9 @@
                     "verified": "Ang petsa ng transaksyon ng pasyente ay napatunayan na!",
                     "errorSearch": "Hindi mahanap ang pasyente. Pakisuri muli ang numero ng transaksyon ng pasyente",
                     "errorVerify": "Hindi makumpirma ang petsa ng transaksyon ng pasyente."
-                }
+                },
+                "wrong": "May naganap na problema. Pakisubukang muli mamaya."
+
             }
         ]
 

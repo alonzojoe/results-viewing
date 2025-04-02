@@ -41,7 +41,7 @@ const Results = () => {
         ) : activeTab === 2 ? (
           <Verification language={language} />
         ) : (
-          <List />
+          <List language={language} />
         )}
       </div>
       <LanguageSelector />
