@@ -477,7 +477,7 @@
                 },
                 "message": {
                     "proceed": "Magpatuloy sa beripikasyon",
-                    "verified": "Ang petsa ng transaksyon ng pasyente ay napatunayan na!",
+                    "verified": "Ang petsa ng transaksyon ng pasyente ay nakumpirma na!",
                     "errorSearch": "Hindi mahanap ang pasyente. Pakisuri muli ang numero ng transaksyon ng pasyente",
                     "errorVerify": "Hindi makumpirma ang petsa ng transaksyon ng pasyente."
                 },
