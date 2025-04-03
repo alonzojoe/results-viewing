@@ -4,11 +4,11 @@ const LanguageSelector = () => {
   const { language, selectLanguage } = useContext(LanguageContext);
 
   const lang = useMemo(() => {
-    return language?.language.toUpperCase();
+    return language?.language.toLowerCase() === "en" ? "fil" : "en";
   }, [language]);
 
   const handleLanguageChange = () => {
-    const revLang = lang.toLowerCase() === "en" ? "fil" : "en";
+    const revLang = lang.toLowerCase() === "en" ? "en" : "fil";
 
     selectLanguage(revLang);
   };
@@ -20,7 +20,7 @@ const LanguageSelector = () => {
       title="Change Language"
       onClick={handleLanguageChange}
     >
-      {lang}
+      {lang.toUpperCase()}
     </div>
   );
 };

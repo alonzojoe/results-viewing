@@ -25,6 +25,8 @@ const Results = () => {
     }
   }, [data]);
 
+  const lang = language?.data[9]?.title;
+
   return (
     <div>
       <LogoContainer>
@@ -32,7 +34,7 @@ const Results = () => {
       </LogoContainer>
       <div className="py-5 gap-2 qr-container transition-fade-in">
         <h2 className="d-flex justify-content-center align-self-center mb-4">
-          Laboratory Results
+          {lang}
         </h2>
         <Timeline selectedId={activeTab} />
         <hr />
