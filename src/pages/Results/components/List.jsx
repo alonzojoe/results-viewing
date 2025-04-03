@@ -60,6 +60,14 @@ const List = ({ language }) => {
     notFound: language?.data[9]?.notFound,
   };
 
+  const viewResults = (docPath) => {
+    let formattedPath = docPath.replace(/\\/g, "/");
+    formattedPath = unescape(encodeURIComponent(formattedPath));
+
+    console.log(formattedPath);
+    window.open(`../../../TRY${formattedPath}`);
+  };
+
   return (
     <>
       <PatientInfo label={label} patient={patient[0]} />
@@ -86,7 +94,10 @@ const List = ({ language }) => {
                   <tr key={r.id}>
                     <td className="p-1">{r.item_id}.</td>
                     <td className="p-1">
-                      <span className="cursor-pointer">
+                      <span
+                        className="cursor-pointer"
+                        onClick={() => viewResults(r.DocumentPath)}
+                      >
                         <i
                           className="fa fa-file-pdf text-danger mx-1 mr-2 fs-5"
                           aria-hidden="true"
@@ -94,7 +105,7 @@ const List = ({ language }) => {
                       </span>
                     </td>
                     <td className="p-1 text-start">
-                      <div>
+                      <div onClick={() => viewResults(r.DocumentPath)}>
                         <span className="cursor-pointer text-primary">
                           {r.description} <small>(Click to view)</small>
                         </span>
