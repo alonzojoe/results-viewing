@@ -11,7 +11,7 @@ import LanguageSelector from "./components/LanguageSelector";
 import Footer from "./components/Footer";
 
 const Results = () => {
-  const [activeTab, setActiveTab] = useState(2);
+  const [activeTab, setActiveTab] = useState(0);
   const { patient: data } = useContext(PatientContext);
   const { language, selectLanguage } = useContext(LanguageContext);
   useEffect(() => {
@@ -45,6 +45,24 @@ const Results = () => {
         ) : (
           <List language={language} />
         )}
+      </div>
+      <div className="ptype-container d-flex align-items-center transition-fade-in">
+        <div className="ptype-btn-container">
+          <div className="ptype-btn new">
+            <div className="row">
+              <i className="fas fa-qrcode col-4"></i>
+              <span className="col-8 d-flex align-items-center">QR Code</span>
+            </div>
+          </div>
+          <div className="ptype-btn old">
+            <div className="d-flex">
+              <i className="fas fa-t col-4"></i>
+              <span className="col-8 d-flex align-items-center">
+                Transaction No
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
       <LanguageSelector />
       <Footer />
