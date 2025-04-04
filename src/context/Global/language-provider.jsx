@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import LanguageContext from "./language-context";
 import axios from "axios";
 import { Toast } from "../../constants";
+import Cookies from "js-cookie";
 const toast = new Toast();
 const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(null);
@@ -25,10 +26,13 @@ const LanguageProvider = ({ children }) => {
     } catch (e) {
       console.log(`Error: ${e.message}`);
     }
+    Cookies.set("lang", type);
   };
 
   useEffect(() => {
-    selectLanguage("en");
+    const storedLang = Cookies.get("lang") ?? "en";
+    console.log("stored", storedLang);
+    selectLanguage(storedLang);
   }, []);
 
   const languageValues = {
