@@ -11,7 +11,7 @@ import LanguageSelector from "./components/LanguageSelector";
 import Footer from "./components/Footer";
 
 const Results = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
   const { patient: data } = useContext(PatientContext);
   const { language, selectLanguage } = useContext(LanguageContext);
   useEffect(() => {
