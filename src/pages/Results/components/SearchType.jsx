@@ -33,11 +33,14 @@ const SearchType = ({ language, onSelect, onQRScan }) => {
           onQRScan(qrCode.data);
           setTimeout(() => {
             onSelect((prev) => ({ ...prev, type: 1 }));
-            setLoading(true);
+            setLoading(false);
           }, 1000);
         } else {
-          toast.message("error", msg.qrError, "top-end");
-          onSelect((prev) => ({ ...prev, type: null }));
+          setTimeout(() => {
+            toast.message("error", msg.qrError, "top-end");
+            onSelect((prev) => ({ ...prev, type: null }));
+            setLoading(false);
+          }, 1000);
         }
       };
     };
