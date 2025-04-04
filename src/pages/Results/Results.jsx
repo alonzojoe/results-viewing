@@ -16,6 +16,7 @@ const Results = () => {
     activeTab: 1,
     type: null,
   });
+  const [qrData, setQrData] = useState("");
 
   const { patient: data } = useContext(PatientContext);
   const { language } = useContext(LanguageContext);
@@ -39,7 +40,7 @@ const Results = () => {
         <img src={LogoImg} alt="JBLMGH - OKOPD" />
       </LogoContainer>
       {payload.type === null ? (
-        <SearchType onSelect={setPayload} />
+        <SearchType onSelect={setPayload} onQRScan={setQrData} />
       ) : (
         <div className="py-5 gap-2 qr-container transition-fade-in">
           <h2 className="d-flex justify-content-center align-self-center mb-4">
@@ -48,7 +49,7 @@ const Results = () => {
           <Timeline selectedId={payload.activeTab} />
           <hr />
           {payload.activeTab === 1 ? (
-            <Search language={language} />
+            <Search language={language} qrData={qrData} />
           ) : payload.activeTab === 2 ? (
             <Verification language={language} />
           ) : (

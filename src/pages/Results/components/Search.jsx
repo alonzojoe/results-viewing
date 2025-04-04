@@ -1,8 +1,9 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useRef, useState, useEffect } from "react";
 import { PatientContext } from "../../../context/Patient/patient-context";
 
-const Search = ({ language }) => {
+const Search = ({ language, qrData }) => {
   const searchRef = useRef(null);
+  const btnRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const { patient, dispatchPatient, searchPatient } =
@@ -20,6 +21,14 @@ const Search = ({ language }) => {
 
   const labelTitle = language?.data[9]?.transaction;
   const btnTitle = language?.data[9]?.timeline["search"];
+
+  useEffect(() => {
+    if (qrData !== "") {
+      console.log("Search component QR Content:", qrData);
+      searchRef.current.value = qrData;
+      btnRef.current.click();
+    }
+  }, [qrData]);
   return (
     <>
       <div className="w-100 mb-2">
@@ -28,6 +37,7 @@ const Search = ({ language }) => {
       </div>
       <div className="btn-container mt-3 text-center">
         <button
+          ref={btnRef}
           className="btn-default btn w-100 mb-5"
           onClick={search}
           disabled={isLoading}

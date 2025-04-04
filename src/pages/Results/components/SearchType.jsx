@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
 import jsQR from "jsqr";
 
-const SearchType = ({ onSelect }) => {
+const SearchType = ({ onSelect, onQRScan }) => {
   const fileInputRef = useRef(null);
-  const [qrData, setQrData] = useState("");
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
@@ -24,9 +23,10 @@ const SearchType = ({ onSelect }) => {
         const qrCode = jsQR(imageData.data, imageData.width, imageData.height);
 
         if (qrCode) {
-          setQrData(qrCode.data);
+          onQRScan(qrCode.data);
+          onSelect((prev) => ({ ...prev, type: 1 }));
         } else {
-          setQrData("No QR code found.");
+          onQRScan("No QR code found.");
         }
       };
     };
@@ -36,7 +36,6 @@ const SearchType = ({ onSelect }) => {
   const selecType = (type) => {
     if (type === "qr") {
       fileInputRef.current.click();
-      onSelect((prev) => ({ ...prev, type: 1 }));
       return;
     }
 
@@ -59,7 +58,6 @@ const SearchType = ({ onSelect }) => {
           accept="image/*"
           onChange={handleFileUpload}
         />
-        <p>QR Code Content: {qrData}</p>
         <div className="ptype-btn old" onClick={() => selecType("tn")}>
           <div className="d-flex">
             <i className="fas fa-t col-4"></i>
