@@ -17,14 +17,14 @@ const Search = ({ language, qrData }) => {
     searchRef.current.value = "";
   };
 
-  console.log("search comp", language?.data[9]?.transaction);
+  // console.log("search comp", language?.data[9]?.transaction);
 
   const labelTitle = language?.data[9]?.transaction;
   const btnTitle = language?.data[9]?.timeline["search"];
 
   useEffect(() => {
     if (qrData !== "") {
-      console.log("Search component QR Content:", qrData);
+      // console.log("Search component QR Content:", qrData);
       searchRef.current.value = qrData;
       btnRef.current.click();
     }

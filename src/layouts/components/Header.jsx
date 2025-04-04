@@ -13,9 +13,9 @@ const Header = () => {
   //   return Object.entries(navObject) ?? [];
   // }, [navObject]);
 
-  console.log("nav", language);
-  console.log("navObject", navObject);
-  console.log("navObject type", typeof navObject);
+  // console.log("nav", language);
+  // console.log("navObject", navObject);
+  // console.log("navObject type", typeof navObject);
 
   const navItems =
     typeof navObject === "object"
@@ -26,7 +26,7 @@ const Header = () => {
         }))
       : [];
 
-  console.log("navItems", navItems);
+  // console.log("navItems", navItems);
 
   const selectTab = (path) => {
     console.log(path);

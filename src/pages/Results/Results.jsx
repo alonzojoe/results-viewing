@@ -23,7 +23,7 @@ const Results = () => {
 
   useEffect(() => {
     if (data.patient && !data.verified) {
-      console.log(data.patient);
+      // console.log(data.patient);
       setPayload((prev) => ({ ...prev, activeTab: 2 }));
     } else if (data.patient && data.verified) {
       setPayload((prev) => ({ ...prev, activeTab: 3 }));

@@ -14,7 +14,7 @@ const LanguageProvider = ({ children }) => {
       const res = await axios.get(`/opd/lab/language.json?rand=${Date.now()}`, {
         cache: "no-cache",
       });
-      console.log(res.data);
+    
       const selectedLang = res.data.find((lang) => lang.language === type);
 
       if (!selectedLang) {
@@ -31,7 +31,6 @@ const LanguageProvider = ({ children }) => {
 
   useEffect(() => {
     const storedLang = Cookies.get("lang") ?? "en";
-    console.log("stored", storedLang);
     selectLanguage(storedLang);
   }, []);
 

@@ -12,8 +12,8 @@ const LanguageSelector = () => {
 
     selectLanguage(revLang);
   };
-  console.log("component re-renders");
-  console.log("lang", language);
+  // console.log("component re-renders");
+  // console.log("lang", language);
   return (
     <div
       className="language"

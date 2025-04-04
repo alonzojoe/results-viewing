@@ -13,7 +13,7 @@ const Verification = ({ language }) => {
     verified,
   } = useContext(PatientContext);
 
-  console.log("data", data);
+  // console.log("data", data);
 
   const verify = async () => {
     const { patient } = data;

@@ -14,7 +14,6 @@ const Timeline = ({ selectedId = 1 }) => {
         }))
       : [];
 
-  console.log("timeline", steps);
   return (
     <div className="d-flex justify-content-between align-items-center px-2 mb-4 position-relative">
       <div className="intersection">
