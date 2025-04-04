@@ -40,7 +40,11 @@ const Results = () => {
         <img src={LogoImg} alt="JBLMGH - OKOPD" />
       </LogoContainer>
       {payload.type === null ? (
-        <SearchType onSelect={setPayload} onQRScan={setQrData} />
+        <SearchType
+          language={language}
+          onSelect={setPayload}
+          onQRScan={setQrData}
+        />
       ) : (
         <div className="py-5 gap-2 qr-container transition-fade-in">
           <h2 className="d-flex justify-content-center align-self-center mb-4">

@@ -1,9 +1,11 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import jsQR from "jsqr";
+import { Toast } from "../../../constants";
+const toast = new Toast();
 
-const SearchType = ({ onSelect, onQRScan }) => {
+const SearchType = ({ language, onSelect, onQRScan }) => {
   const fileInputRef = useRef(null);
-
+  const msg = language?.data[9]?.message;
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -22,11 +24,14 @@ const SearchType = ({ onSelect, onQRScan }) => {
         const imageData = ctx.getImageData(0, 0, img.width, img.height);
         const qrCode = jsQR(imageData.data, imageData.width, imageData.height);
 
-        if (qrCode) {
+        const prefixes = ["IN", "OPD", "WLK", "ER"];
+
+        if (qrCode && prefixes.some((prefix) => qrCode.data.includes(prefix))) {
           onQRScan(qrCode.data);
           onSelect((prev) => ({ ...prev, type: 1 }));
         } else {
-          onQRScan("No QR code found.");
+          toast.message("error", msg.qrError, "top-end");
+          onSelect((prev) => ({ ...prev, type: null }));
         }
       };
     };
