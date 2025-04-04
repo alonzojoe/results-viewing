@@ -32,7 +32,7 @@ const Search = ({ language, qrData }) => {
   return (
     <>
       <div className="w-100 mb-2">
-        <label className="fw-bold mb-1">{labelTitle}</label>
+        <label className="fw-bold mb-1">{labelTitle} :</label>
         <input ref={searchRef} type="text" className="form-control" />
       </div>
       <div className="btn-container mt-3 text-center">

@@ -47,7 +47,7 @@ const Results = () => {
         />
       ) : (
         <div className="py-5 gap-2 qr-container transition-fade-in">
-          <h2 className="d-flex justify-content-center align-self-center mb-4">
+          <h2 className="d-flex text-center justify-content-center align-self-center mb-4">
             {lang}
           </h2>
           <Timeline selectedId={payload.activeTab} />

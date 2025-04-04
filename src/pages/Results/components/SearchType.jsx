@@ -6,6 +6,7 @@ const toast = new Toast();
 const SearchType = ({ language, onSelect, onQRScan }) => {
   const fileInputRef = useRef(null);
   const msg = language?.data[9]?.message;
+  const label = language?.data[9];
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -67,7 +68,7 @@ const SearchType = ({ language, onSelect, onQRScan }) => {
           <div className="d-flex">
             <i className="fas fa-t col-4"></i>
             <span className="col-8 d-flex align-items-center">
-              Transaction No
+              {label?.transaction}
             </span>
           </div>
         </div>
