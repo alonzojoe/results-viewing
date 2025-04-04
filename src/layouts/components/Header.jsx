@@ -13,9 +13,9 @@ const Header = () => {
   //   return Object.entries(navObject) ?? [];
   // }, [navObject]);
 
-  console.log("nav", language);
-  console.log("navObject", navObject);
-  console.log("navObject type", typeof navObject);
+  // console.log("nav", language);
+  // console.log("navObject", navObject);
+  // console.log("navObject type", typeof navObject);
 
   const navItems =
     typeof navObject === "object"
@@ -26,7 +26,43 @@ const Header = () => {
         }))
       : [];
 
-  console.log("navItems", navItems);
+  // console.log("navItems", navItems);
+
+  const selectTab = (path) => {
+    console.log(path);
+    let newPath;
+    switch (path) {
+      case "/home":
+        newPath = "/";
+        break;
+      case "/services":
+        newPath = path;
+        break;
+      case "/policy":
+        newPath = path;
+        break;
+      case "/telecode":
+        newPath = "/queuecode";
+        break;
+      case "/viewappointment":
+        newPath = "/ViewAppointment";
+        break;
+      case "/getappointment":
+        newPath = "/";
+        break;
+      case "/lab":
+        newPath = "/";
+        break;
+      default:
+        break;
+    }
+    if (path === "/lab") {
+      window.location.reload();
+      return;
+    }
+    // return;
+    window.location.href = `https://jblmgh.info:70/opd/#${newPath}`;
+  };
 
   return (
     <>
@@ -42,7 +78,7 @@ const Header = () => {
                 <ul>
                   {navItems.map((nav) => (
                     <li key={nav.id}>
-                      <a>{nav.name}</a>
+                      <a onClick={() => selectTab(nav.path)}>{nav.name}</a>
                     </li>
                   ))}
                 </ul>
@@ -70,30 +106,11 @@ const Header = () => {
               onClick={() => toggleHeader()}
             ></i>
             <ul>
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>Services</a>
-              </li>
-              <li>
-                <a>Policy</a>
-              </li>
-              <li>
-                <a>OKOPD Queue</a>
-              </li>
-              <li>
-                <a>View Appointment</a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
-                >
-                  Get Appointment
-                </a>
-              </li>
+              {navItems.map((nav) => (
+                <li key={nav.id}>
+                  <a onClick={() => selectTab(nav.path)}>{nav.name}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

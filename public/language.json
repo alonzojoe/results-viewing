@@ -9,6 +9,7 @@
                         "home": "Home",
                         "services": "Services",
                         "policy": "Policy",
+                        "lab": "Patient Results",
                         "telecode": "OKOPD Queue",
                         "viewappointment": "View Appointment",
                         "getappointment": "Get Appointment"
@@ -221,7 +222,7 @@
                 "id": 9,
                 "title": "Laboratory Results",
                 "patient": "Patient",
-                "transaction": "Transaction No:",
+                "transaction": "Transaction No",
                 "transaction_date": "Transaction Date:",
                 "list": "List of available results",
                 "notFound": "Patient results have not been released yet. Please try again later.",
@@ -234,7 +235,8 @@
                     "proceed": "Proceed to verification",
                     "verified": "Patient Transaction Date has been verified!",
                     "errorSearch": "Patient not found. Please double-check the patient transaction number.",
-                    "errorVerify": "Patient Transaction Date could not be verified."
+                    "errorVerify": "Patient Transaction Date could not be verified.",
+                    "qrError": "Invalid QR Code"
                 },
                 "wrong": "Something went wrong. Please try again later."
             }
@@ -252,6 +254,7 @@
                         "home": "Home",
                         "services": "Serbisyo",
                         "policy": "Patakaran",
+                        "lab": "Resulta ng Pasyente",
                         "telecode": "OKOPD Queue",
                         "viewappointment": "Tingnan ang Appointment",
                         "getappointment": "Kumuha ng Appointment"
@@ -466,7 +469,7 @@
                 "id": 9,
                 "title": "Mga Resulta ng Laboratoryo",
                 "patient": "Pasyente",
-                "transaction": "Numero ng Transaksyon:",
+                "transaction": "Numero ng Transaksyon",
                 "transaction_date": "Petsa ng Transaction:",
                 "list": "Listahan ng mga maaring makita na resulta",
                 "notFound": "Hindi pa nailalabas ang mga resulta ng pasyente. Pakisubukang muli mamaya.",
@@ -479,7 +482,8 @@
                     "proceed": "Magpatuloy sa beripikasyon",
                     "verified": "Ang petsa ng transaksyon ng pasyente ay nakumpirma na!",
                     "errorSearch": "Hindi mahanap ang pasyente. Pakisuri muli ang numero ng transaksyon ng pasyente",
-                    "errorVerify": "Hindi makumpirma ang petsa ng transaksyon ng pasyente."
+                    "errorVerify": "Hindi makumpirma ang petsa ng transaksyon ng pasyente.",
+                    "qrError": "Mali ang QR Code"
                 },
                 "wrong": "May naganap na problema. Pakisubukang muli mamaya."
 

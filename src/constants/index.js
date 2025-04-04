@@ -12,7 +12,7 @@ export class Toast {
       toast: true,
       position,
       showConfirmButton: false,
-      timer: 1000,
+      timer: 3000,
       timerProgressBar: true,
       didOpen: (toast) => {
         toast.onmouseenter = Swal.stopTimer;

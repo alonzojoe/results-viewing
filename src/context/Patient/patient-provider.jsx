@@ -40,7 +40,6 @@ const PatientProvider = ({ children }) => {
   const { language } = useContext(LanguageContext);
 
   const msg = language?.data[9]?.message;
-  console.log("msg", msg);
 
   const searchPatient = async (params) => {
     try {
@@ -55,7 +54,6 @@ const PatientProvider = ({ children }) => {
 
       toast.message("success", msg.proceed);
     } catch (error) {
-      console.log(error?.message);
       Swal.fire({
         title: "404",
         text: msg.errorSearch,

@@ -64,7 +64,7 @@ const List = ({ language }) => {
     let formattedPath = docPath.replace(/\\/g, "/");
     formattedPath = unescape(encodeURIComponent(formattedPath));
 
-    console.log(formattedPath);
+    // console.log(formattedPath);
     window.open(`../../../TRY${formattedPath}`);
   };
 

@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
 import LogoContainer from "../../components/LogoContainer";
 import LogoImg from "../../assets/images/okopdlogo.png";
 import Timeline from "../../components/Timeline";
@@ -9,21 +9,28 @@ import { PatientContext } from "../../context/Patient/patient-context";
 import LanguageContext from "../../context/Global/language-context";
 import LanguageSelector from "./components/LanguageSelector";
 import Footer from "./components/Footer";
+import SearchType from "./components/SearchType";
 
 const Results = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [payload, setPayload] = useState({
+    activeTab: 1,
+    type: null,
+  });
+  const [qrData, setQrData] = useState("");
+
   const { patient: data } = useContext(PatientContext);
-  const { language, selectLanguage } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
+
   useEffect(() => {
     if (data.patient && !data.verified) {
-      console.log(data.patient);
-      setActiveTab(2);
+      // console.log(data.patient);
+      setPayload((prev) => ({ ...prev, activeTab: 2 }));
     } else if (data.patient && data.verified) {
-      setActiveTab(3);
-    } else {
-      setActiveTab(1);
+      setPayload((prev) => ({ ...prev, activeTab: 3 }));
+    } else if (payload.type === 2) {
+      setPayload((prev) => ({ ...prev, activeTab: 1 }));
     }
-  }, [data]);
+  }, [data, setPayload, payload.type]);
 
   const lang = language?.data[9]?.title;
 
@@ -32,38 +39,29 @@ const Results = () => {
       <LogoContainer>
         <img src={LogoImg} alt="JBLMGH - OKOPD" />
       </LogoContainer>
-      <div className="py-5 gap-2 qr-container transition-fade-in">
-        <h2 className="d-flex justify-content-center align-self-center mb-4">
-          {lang}
-        </h2>
-        <Timeline selectedId={activeTab} />
-        <hr />
-        {activeTab === 1 ? (
-          <Search language={language} />
-        ) : activeTab === 2 ? (
-          <Verification language={language} />
-        ) : (
-          <List language={language} />
-        )}
-      </div>
-      <div className="ptype-container d-flex align-items-center transition-fade-in">
-        <div className="ptype-btn-container">
-          <div className="ptype-btn new">
-            <div className="row">
-              <i className="fas fa-qrcode col-4"></i>
-              <span className="col-8 d-flex align-items-center">QR Code</span>
-            </div>
-          </div>
-          <div className="ptype-btn old">
-            <div className="d-flex">
-              <i className="fas fa-t col-4"></i>
-              <span className="col-8 d-flex align-items-center">
-                Transaction No
-              </span>
-            </div>
-          </div>
+      {payload.type === null ? (
+        <SearchType
+          language={language}
+          onSelect={setPayload}
+          onQRScan={setQrData}
+        />
+      ) : (
+        <div className="py-5 gap-2 qr-container transition-fade-in">
+          <h2 className="d-flex text-center justify-content-center align-self-center mb-4">
+            {lang}
+          </h2>
+          <Timeline selectedId={payload.activeTab} />
+          <hr />
+          {payload.activeTab === 1 ? (
+            <Search language={language} qrData={qrData} />
+          ) : payload.activeTab === 2 ? (
+            <Verification language={language} />
+          ) : (
+            <List language={language} />
+          )}
         </div>
-      </div>
+      )}
+
       <LanguageSelector />
       <Footer />
     </div>
