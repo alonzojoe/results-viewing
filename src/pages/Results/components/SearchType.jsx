@@ -1,16 +1,18 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import jsQR from "jsqr";
 import { Toast } from "../../../constants";
+import PageLoader from "../../../components/PageLoader";
 const toast = new Toast();
 
 const SearchType = ({ language, onSelect, onQRScan }) => {
+  const [loading, setLoading] = useState(false);
   const fileInputRef = useRef(null);
   const msg = language?.data[9]?.message;
   const label = language?.data[9];
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     if (!file) return;
-
+    setLoading(true);
     const reader = new FileReader();
     reader.onload = (e) => {
       const img = new Image();
@@ -29,7 +31,10 @@ const SearchType = ({ language, onSelect, onQRScan }) => {
 
         if (qrCode && prefixes.some((prefix) => qrCode.data.includes(prefix))) {
           onQRScan(qrCode.data);
-          onSelect((prev) => ({ ...prev, type: 1 }));
+          setTimeout(() => {
+            onSelect((prev) => ({ ...prev, type: 1 }));
+            setLoading(true);
+          }, 1000);
         } else {
           toast.message("error", msg.qrError, "top-end");
           onSelect((prev) => ({ ...prev, type: null }));
@@ -49,31 +54,34 @@ const SearchType = ({ language, onSelect, onQRScan }) => {
   };
 
   return (
-    <div className="ptype-container d-flex align-items-center transition-fade-in">
-      <div className="ptype-btn-container">
-        <div className="ptype-btn new" onClick={() => selecType("qr")}>
-          <div className="row">
-            <i className="fas fa-qrcode col-4"></i>
-            <span className="col-8 d-flex align-items-center">QR Code</span>
+    <>
+      {loading && <PageLoader />}
+      <div className="ptype-container d-flex align-items-center transition-fade-in">
+        <div className="ptype-btn-container">
+          <div className="ptype-btn new" onClick={() => selecType("qr")}>
+            <div className="row">
+              <i className="fas fa-qrcode col-4"></i>
+              <span className="col-8 d-flex align-items-center">QR Code</span>
+            </div>
           </div>
-        </div>
-        <input
-          ref={fileInputRef}
-          className="d-none"
-          type="file"
-          accept="image/*"
-          onChange={handleFileUpload}
-        />
-        <div className="ptype-btn old" onClick={() => selecType("tn")}>
-          <div className="d-flex">
-            <i className="fas fa-t col-4"></i>
-            <span className="col-8 d-flex align-items-center">
-              {label?.transaction}
-            </span>
+          <input
+            ref={fileInputRef}
+            className="d-none"
+            type="file"
+            accept="image/*"
+            onChange={handleFileUpload}
+          />
+          <div className="ptype-btn old" onClick={() => selecType("tn")}>
+            <div className="d-flex">
+              <i className="fas fa-t col-4"></i>
+              <span className="col-8 d-flex align-items-center">
+                {label?.transaction}
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
