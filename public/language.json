@@ -9,6 +9,7 @@
                         "home": "Home",
                         "services": "Services",
                         "policy": "Policy",
+                        "lab": "Patient Results",
                         "telecode": "OKOPD Queue",
                         "viewappointment": "View Appointment",
                         "getappointment": "Get Appointment"
@@ -253,6 +254,7 @@
                         "home": "Home",
                         "services": "Serbisyo",
                         "policy": "Patakaran",
+                        "lab": "Resulta ng Pasyente",
                         "telecode": "OKOPD Queue",
                         "viewappointment": "Tingnan ang Appointment",
                         "getappointment": "Kumuha ng Appointment"

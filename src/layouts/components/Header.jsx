@@ -50,8 +50,15 @@ const Header = () => {
       case "/getappointment":
         newPath = "/";
         break;
+      case "/lab":
+        newPath = "/";
+        break;
       default:
         break;
+    }
+    if (path === "/lab") {
+      window.location.reload();
+      return;
     }
     // return;
     window.location.href = `https://jblmgh.info:70/opd/#${newPath}`;
