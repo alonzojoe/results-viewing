@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
-import jsQR from "jsqr";
+import QrScanner from "qr-scanner";
+
 import { Toast } from "../../../constants";
 import PageLoader from "../../../components/PageLoader";
 const toast = new Toast();
@@ -9,42 +10,37 @@ const SearchType = ({ language, onSelect, onQRScan }) => {
   const fileInputRef = useRef(null);
   const msg = language?.data[9]?.message;
   const label = language?.data[9];
-  const handleFileUpload = (event) => {
+  const handleFileUpload = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
+
     setLoading(true);
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const img = new Image();
-      img.src = e.target.result;
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        canvas.width = img.width;
-        canvas.height = img.height;
-        ctx.drawImage(img, 0, 0, img.width, img.height);
 
-        const imageData = ctx.getImageData(0, 0, img.width, img.height);
-        const qrCode = jsQR(imageData.data, imageData.width, imageData.height);
+    try {
+      const result = await QrScanner.scanImage(file, {
+        returnDetailedScanResult: true,
+      });
 
-        const prefixes = ["IN", "OPD", "WLK", "ER"];
+      const prefixes = ["IN", "OPD", "WLK", "ER"];
 
-        if (qrCode && prefixes.some((prefix) => qrCode.data.includes(prefix))) {
-          onQRScan(qrCode.data);
-          setTimeout(() => {
-            onSelect((prev) => ({ ...prev, type: 1 }));
-            setLoading(false);
-          }, 1000);
-        } else {
-          setTimeout(() => {
-            toast.message("error", msg.qrError, "top-end");
-            onSelect((prev) => ({ ...prev, type: null }));
-            setLoading(false);
-          }, 1000);
-        }
-      };
-    };
-    reader.readAsDataURL(file);
+      if (result && prefixes.some((prefix) => result.data.includes(prefix))) {
+        onQRScan(result.data);
+        setTimeout(() => {
+          onSelect((prev) => ({ ...prev, type: 1 }));
+          setLoading(false);
+        }, 1000);
+      } else {
+        setTimeout(() => {
+          toast.message("error", "Invalid QR code", "top-end");
+          onSelect((prev) => ({ ...prev, type: null }));
+          setLoading(false);
+        }, 1000);
+      }
+    } catch (error) {
+      console.error("QR scan failed:", error);
+      toast.message("error", "Error scanning QR code", "top-end");
+      setLoading(false);
+    }
   };
 
   const selecType = (type) => {
