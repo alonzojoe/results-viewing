@@ -6,7 +6,7 @@ const Pagination = ({
   lastPage,
 }) => {
   return (
-    <div className="mt-2 d-flex justify-items-end gap-1">
+    <div className="mt-2 d-flex justify-items-end gap-1 mb-3">
       <button
         className="btn btn-sm btn-primary"
         onClick={onFirstPage}
