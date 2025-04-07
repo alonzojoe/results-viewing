@@ -69,9 +69,21 @@ const Header = () => {
       <div className="header-menu">
         <div className="container header-container">
           <div className="row">
-            <div className="col-2 d-flex align-items-center gap-2">
+            <div
+              className="col-2 d-flex align-items-center gap-2"
+              onClick={() =>
+                (window.location.href = `https://jblmgh.info:70/opd/`)
+              }
+            >
               <img src={appLogo} width="30" height="30" />
-              <a className="logo">JBLMGH</a>
+              <a
+                className="logo"
+                onClick={() =>
+                  (window.location.href = `https://jblmgh.info:70/opd/`)
+                }
+              >
+                JBLMGH
+              </a>
             </div>
             <div className="col-10">
               <nav className="main-menu">
