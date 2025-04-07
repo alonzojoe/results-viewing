@@ -4,11 +4,11 @@ const LanguageSelector = () => {
   const { language, selectLanguage } = useContext(LanguageContext);
 
   const lang = useMemo(() => {
-    return language?.language.toLowerCase() === "en" ? "fil" : "en";
+    return language?.language.toLowerCase() === "en" ? "fil" : "eng";
   }, [language]);
 
   const handleLanguageChange = () => {
-    const revLang = lang.toLowerCase() === "en" ? "en" : "fil";
+    const revLang = lang.toLowerCase() === "eng" ? "en" : "fil";
 
     selectLanguage(revLang);
   };
