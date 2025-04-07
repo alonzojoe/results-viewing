@@ -11,11 +11,13 @@ import LanguageSelector from "./components/LanguageSelector";
 import Footer from "./components/Footer";
 import SearchType from "./components/SearchType";
 
+const initialParams = {
+  activeTab: 1,
+  type: null,
+};
+
 const Results = () => {
-  const [payload, setPayload] = useState({
-    activeTab: 1,
-    type: null,
-  });
+  const [payload, setPayload] = useState(initialParams);
   const [qrData, setQrData] = useState("");
 
   const { patient: data } = useContext(PatientContext);
@@ -33,7 +35,7 @@ const Results = () => {
   }, [data, setPayload, payload.type]);
 
   const lang = language?.data[9]?.title;
-
+  const labelRsetart = language?.data[9]?.restart;
   return (
     <div>
       <LogoContainer>
@@ -59,6 +61,14 @@ const Results = () => {
           ) : (
             <List language={language} />
           )}
+          <div className="d-flex justify-content-center">
+            <button
+              className="btn btn-dark btn-xs"
+              onClick={() => setPayload(initialParams)}
+            >
+              <i className="fa fa-refresh"></i> {labelRsetart}
+            </button>
+          </div>
         </div>
       )}
 
