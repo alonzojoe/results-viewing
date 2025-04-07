@@ -238,7 +238,8 @@
                     "errorVerify": "Patient Transaction Date could not be verified.",
                     "qrError": "Invalid QR Code"
                 },
-                "wrong": "Something went wrong. Please try again later."
+                "wrong": "Something went wrong. Please try again later.",
+                "restart": "Restart"
             }
         ]
 
@@ -485,8 +486,8 @@
                     "errorVerify": "Hindi makumpirma ang petsa ng transaksyon ng pasyente.",
                     "qrError": "Mali ang QR Code"
                 },
-                "wrong": "May naganap na problema. Pakisubukang muli mamaya."
-
+                "wrong": "May naganap na problema. Pakisubukang muli mamaya.",
+                "restart": "Magumpisang muli"
             }
         ]
 
