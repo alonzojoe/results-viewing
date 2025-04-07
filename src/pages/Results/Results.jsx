@@ -36,6 +36,11 @@ const Results = () => {
 
   const lang = language?.data[9]?.title;
   const labelRsetart = language?.data[9]?.restart;
+
+  const restart = () => {
+    window.location.reload();
+  };
+
   return (
     <div>
       <LogoContainer>
@@ -62,10 +67,7 @@ const Results = () => {
             <List language={language} />
           )}
           <div className="d-flex justify-content-center">
-            <button
-              className="btn btn-dark btn-xs"
-              onClick={() => setPayload(initialParams)}
-            >
+            <button className="btn btn-dark btn-xs" onClick={restart}>
               <i className="fa fa-refresh"></i> {labelRsetart}
             </button>
           </div>
