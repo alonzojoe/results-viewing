@@ -1,76 +1,82 @@
-import { useEffect, useState } from "react";
-import { driver } from "driver.js";
-import "driver.js/dist/driver.css";
+import { useEffect, useRef, useState } from "react";
+import { TourGuideClient } from "@sjmc11/tourguidejs/src/Tour";
+import "@sjmc11/tourguidejs/src/scss/tour.scss";
 
 const Instructions = ({ label }) => {
-  const [currentStep, setCurrentStep] = useState(0);
-  const [showText, setShowText] = useState(true); // Controls visibility of the <p> tag
-
-  const driverObj = driver({
-    popoverClass: "driverjs-theme",
-    nextBtnText: "Next",
-    prevBtnText: "Previous",
-    onPopoverRender: (popover) => {
-      const restartButton = document.createElement("button");
-      restartButton.innerText = "Restart";
-      popover.footerButtons.appendChild(restartButton);
-
-      restartButton.addEventListener("click", () => {
-        driverObj.drive(0);
-      });
-    },
-    onStepChanged: (stepIndex) => {
-      setCurrentStep(stepIndex);
-
-      if (stepIndex === 2) {
-        setShowText(false);
-      } else {
-        setShowText(true);
-      }
-    },
-    steps: [
-      {
-        element: "#selection-container",
-        popover: {
-          title: "Search Type",
-          description: "Select between QR Code or Transaction Number",
-        },
-      },
-      {
-        element: "#qr",
-        popover: {
-          title: "QR Code",
-          description: "Scan the QR Code to proceed.",
-        },
-      },
-      {
-        element: "#tr",
-        popover: {
-          title: "Transaction Number",
-          description: "Enter the transaction number for verification.",
-        },
-      },
-    ],
-  });
+  const [tourStarted, setTourStarted] = useState(false);
+  const infoTextRef = useRef(null);
+  const tgInstanceRef = useRef(null);
 
   useEffect(() => {
-    driverObj.drive(); // Start the guided tour
+    if (tourStarted) {
+      tgInstanceRef.current = new TourGuideClient({
+        nextBtnText: "Next",
+        prevBtnText: "Previous",
+        finishBtnText: "Finish",
+        onFinish: () => {
+          if (infoTextRef.current) infoTextRef.current.style.display = "block";
+        },
+        onBeforeStepChange: (step) => {
+          console.log("step", step);
+          if (step.currentStep === 1) {
+            if (infoTextRef.current) infoTextRef.current.style.display = "none";
+          } else {
+            if (infoTextRef.current)
+              infoTextRef.current.style.display = "block";
+          }
+        },
+      });
+
+      tgInstanceRef.current.start();
+    }
+
+    return () => {
+      if (tgInstanceRef.current) {
+        tgInstanceRef.current = null;
+      }
+    };
+  }, [tourStarted]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      handleRestart();
+    }, 200);
   }, []);
+
+  const handleRestart = () => {
+    setTourStarted(false);
+    setTimeout(() => {
+      setTourStarted(true);
+    }, 200);
+    if (infoTextRef.current) infoTextRef.current.style.display = "block";
+  };
 
   return (
     <>
       <div
         className="ptype-container d-flex align-items-center transition-fade-in"
         id="selection-container"
+        data-tg-title="Search Type"
+        data-tg-tour="Select between QR Code or Transaction Number"
       >
         <div className="ptype-btn-container pe-none">
-          <div className="ptype-btn new pe-none" id="qr">
+          <div
+            className="ptype-btn new pe-none"
+            id="qr"
+            data-tg-title="QR Code"
+            data-tg-tour="For the QR Code: Scan the Patient's QR in Charge Slip or Statement of Account"
+          >
             <div className="row">
               <i className="fas fa-qrcode col-4"></i>
               <span className="col-8 d-flex align-items-center">QR Code</span>
             </div>
           </div>
-          <div className="ptype-btn old pe-none" id="tr">
+          <div
+            className="ptype-btn old pe-none"
+            id="tr"
+            data-tg-title="Transaction Number"
+            data-tg-tour="Enter the Patient Transaction Number starting with (ER, OPD, WLK and IN)"
+          >
             <div className="d-flex">
               <i className="fas fa-t col-4"></i>
               <span className="col-8 d-flex align-items-center">
@@ -80,7 +86,12 @@ const Instructions = ({ label }) => {
           </div>
         </div>
       </div>
-      {showText && <p id="info-text">This text will be hidden at Step 3</p>}
+      {/* <p id="info-text" ref={infoTextRef}>
+        This text will be hidden at Step 3
+      </p>
+      <button onClick={handleRestart} style={{ marginTop: "10px" }}>
+        Restart Tour
+      </button> */}
     </>
   );
 };
