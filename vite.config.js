@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   base: "/opd/lab/",
   optimizeDeps: {
-    exclude: ["js-cookie"],
+    exclude: ["js-cookie", "@sjmc11/tourguidejs"],
   },
 });
