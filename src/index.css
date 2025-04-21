@@ -56,3 +56,7 @@
 .pe-none {
     pointer-events: none !important;
 }
+
+.mb-spacer {
+    margin-bottom: 15rem;
+}

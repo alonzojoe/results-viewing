@@ -54,7 +54,7 @@ const Instructions = ({ label }) => {
   return (
     <>
       <div
-        className="ptype-container d-flex align-items-center transition-fade-in"
+        className="ptype-container d-flex align-items-center transition-fade-in mb-spacer"
         id="selection-container"
         data-tg-title="Search Type"
         data-tg-tour="Select between QR Code or Transaction Number"
@@ -87,7 +87,7 @@ const Instructions = ({ label }) => {
         </div>
       </div>
       <div
-        className="py-5 gap-2 qr-container transition-fade-in pe-none"
+        className="py-5 gap-2 qr-container transition-fade-in pe-none mb-spacer"
         data-tg-title="Verification"
         data-tg-tour="Next, verify the patient's transaction by selecting the transaction date from the date picker."
       >
