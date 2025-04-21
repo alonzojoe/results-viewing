@@ -48,3 +48,7 @@
     align-items: center;
     justify-content: center;
 }
+
+#selection-container {
+    pointer-events: none !important;
+}

@@ -86,6 +86,48 @@ const Instructions = ({ label }) => {
           </div>
         </div>
       </div>
+      <div className="py-5 gap-2 qr-container transition-fade-in">
+        <h2 className="d-flex text-center justify-content-center align-self-center mb-4">
+          Laboratory Results
+        </h2>
+        <div className="d-flex justify-content-between align-items-center px-2 mb-4 position-relative">
+          <div className="intersection">
+            <div className="child"></div>
+          </div>
+          <div className="d-flex align-items-center flex-column">
+            <div className="steps">1</div>
+            <div>Search</div>
+          </div>
+          <div className="d-flex align-items-center flex-column">
+            <div className="steps active">2</div>
+            <div>Verify</div>
+          </div>
+          <div className="d-flex align-items-center flex-column">
+            <div className="steps">3</div>
+            <div>Viewing</div>
+          </div>
+        </div>
+        <hr />
+        <div className="w-100 mb-">
+          <label className="fw-bold mb-1">Transaction Date:</label>
+          <input
+            type="date"
+            className="form-control"
+            data-has-listeners="true"
+          />
+        </div>
+        <div className="btn-container mt-3 text-center">
+          <button className="btn-default btn w-100 mb-5">
+            <i className="fa fa-check" aria-hidden="true"></i> Verify
+          </button>
+        </div>
+        <div className="d-flex justify-content-center">
+          <button className="btn btn-dark btn-xs">
+            <i className="fa fa-refresh"></i> Restart
+          </button>
+        </div>
+      </div>
+
       {/* <p id="info-text" ref={infoTextRef}>
         This text will be hidden at Step 3
       </p>
