@@ -86,7 +86,11 @@ const Instructions = ({ label }) => {
           </div>
         </div>
       </div>
-      <div className="py-5 gap-2 qr-container transition-fade-in">
+      <div
+        className="py-5 gap-2 qr-container transition-fade-in"
+        data-tg-title="Verification"
+        data-tg-tour="Next, verify the patient's transaction by selecting the transaction date from the date picker."
+      >
         <h2 className="d-flex text-center justify-content-center align-self-center mb-4">
           Laboratory Results
         </h2>
