@@ -48,3 +48,15 @@
     align-items: center;
     justify-content: center;
 }
+
+#selection-container {
+    pointer-events: none !important;
+}
+
+.pe-none {
+    pointer-events: none !important;
+}
+
+.mb-spacer {
+    margin-bottom: 15rem;
+}
