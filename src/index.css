@@ -52,3 +52,7 @@
 #selection-container {
     pointer-events: none !important;
 }
+
+.pe-none {
+    pointer-events: none !important;
+}
