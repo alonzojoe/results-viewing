@@ -4,7 +4,6 @@ import "@sjmc11/tourguidejs/src/scss/tour.scss";
 
 const Instructions = ({ label, onClose }) => {
   const [tourStarted, setTourStarted] = useState(false);
-  const infoTextRef = useRef(null);
   const tgInstanceRef = useRef(null);
 
   // useEffect(() => {
@@ -99,7 +98,6 @@ const Instructions = ({ label, onClose }) => {
     setTimeout(() => {
       setTourStarted(true);
     }, 200);
-    if (infoTextRef.current) infoTextRef.current.style.display = "block";
   };
 
   return (

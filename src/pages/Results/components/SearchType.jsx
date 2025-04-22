@@ -54,11 +54,16 @@ const SearchType = ({ language, onSelect, onQRScan }) => {
     onSelect((prev) => ({ ...prev, type: 2 }));
   };
 
+  const onReset = () => {
+    setShow();
+    window.location.reload();
+  };
+
   return (
     <>
       {loading && <PageLoader />}
       {show ? (
-        <Instructions label={label} onClose={setShow} />
+        <Instructions label={label} onClose={onReset} />
       ) : (
         <div className="ptype-container d-flex align-items-center transition-fade-in">
           <div className="ptype-btn-container">
