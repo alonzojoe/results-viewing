@@ -2,40 +2,91 @@ import { useEffect, useRef, useState } from "react";
 import { TourGuideClient } from "@sjmc11/tourguidejs/src/Tour";
 import "@sjmc11/tourguidejs/src/scss/tour.scss";
 
-const Instructions = ({ label }) => {
+const Instructions = ({ label, onClose }) => {
   const [tourStarted, setTourStarted] = useState(false);
   const infoTextRef = useRef(null);
   const tgInstanceRef = useRef(null);
 
+  // useEffect(() => {
+  //   if (!tgInstanceRef.current) {
+  //     tgInstanceRef.current = new TourGuideClient({
+  //       nextBtnText: "Next",
+  //       prevBtnText: "Previous",
+  //       finishBtnText: "Finish",
+  //       onFinish: () => {
+  //         if (infoTextRef.current) infoTextRef.current.style.display = "block";
+  //         alert("Tour finished!");
+  //       },
+  //       onAfterExit: () => {
+  //         console.info("The tour has closed");
+  //         onClose();
+  //       },
+  //       onBeforeStepChange: (step) => {
+  //         console.log("Step changed:", step);
+  //         if (infoTextRef.current) {
+  //           infoTextRef.current.style.display =
+  //             step.currentStep === 1 ? "none" : "block";
+  //         }
+  //       },
+  //     });
+  //   }
+
+  //   if (tourStarted && tgInstanceRef.current) {
+  //     tgInstanceRef.current.start();
+  //   }
+
+  //   // return () => {
+  //   //   if (
+  //   //     tgInstanceRef.current &&
+  //   //     typeof tgInstanceRef.current.stop === "function"
+  //   //   ) {
+  //   //     tgInstanceRef.current.stop();
+  //   //   }
+  //   //   tgInstanceRef.current = null;
+  //   // };
+  // }, [tourStarted, onClose]);
+
   useEffect(() => {
-    if (tourStarted) {
-      tgInstanceRef.current = new TourGuideClient({
+    if (!tgInstanceRef.current) {
+      const tg = new TourGuideClient({
         nextBtnText: "Next",
         prevBtnText: "Previous",
         finishBtnText: "Finish",
         onFinish: () => {
           if (infoTextRef.current) infoTextRef.current.style.display = "block";
+          alert("Tour finished!");
         },
         onBeforeStepChange: (step) => {
-          console.log("step", step);
-          if (step.currentStep === 1) {
-            if (infoTextRef.current) infoTextRef.current.style.display = "none";
-          } else {
-            if (infoTextRef.current)
-              infoTextRef.current.style.display = "block";
+          console.log("Step changed:", step);
+          if (infoTextRef.current) {
+            infoTextRef.current.style.display =
+              step.currentStep === 1 ? "none" : "block";
           }
         },
       });
 
+      tg.onAfterExit(() => {
+        console.info("The tour has closed");
+        onClose();
+      });
+
+      tgInstanceRef.current = tg;
+    }
+
+    if (tourStarted && tgInstanceRef.current) {
       tgInstanceRef.current.start();
     }
 
-    return () => {
-      if (tgInstanceRef.current) {
-        tgInstanceRef.current = null;
-      }
-    };
-  }, [tourStarted]);
+    // return () => {
+    //   if (
+    //     tgInstanceRef.current &&
+    //     typeof tgInstanceRef.current.stop === "function"
+    //   ) {
+    //     tgInstanceRef.current.stop();
+    //   }
+    //   tgInstanceRef.current = null;
+    // };
+  }, [tourStarted, onClose]);
 
   useEffect(() => {
     setTimeout(() => {
