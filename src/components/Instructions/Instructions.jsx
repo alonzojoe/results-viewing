@@ -176,7 +176,10 @@ const Instructions = ({ label }) => {
 
         <div className="btn-container mt-2 text-center">
           <table className="mb-3">
-            <tbody>
+            <tbody
+              data-tg-title="Viewing"
+              data-tg-tour="To view a patient's result, simply click the name or the PDF icon in the list."
+            >
               {[...Array(3)].map((_, index) => (
                 <tr key={index}>
                   <td className="p-1">{index + 1}.</td>
