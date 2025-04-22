@@ -2,40 +2,90 @@ import { useEffect, useRef, useState } from "react";
 import { TourGuideClient } from "@sjmc11/tourguidejs/src/Tour";
 import "@sjmc11/tourguidejs/src/scss/tour.scss";
 
-const Instructions = ({ label }) => {
+const Instructions = ({ label, onClose }) => {
   const [tourStarted, setTourStarted] = useState(false);
-  const infoTextRef = useRef(null);
   const tgInstanceRef = useRef(null);
 
+  // useEffect(() => {
+  //   if (!tgInstanceRef.current) {
+  //     tgInstanceRef.current = new TourGuideClient({
+  //       nextBtnText: "Next",
+  //       prevBtnText: "Previous",
+  //       finishBtnText: "Finish",
+  //       onFinish: () => {
+  //         if (infoTextRef.current) infoTextRef.current.style.display = "block";
+  //         alert("Tour finished!");
+  //       },
+  //       onAfterExit: () => {
+  //         console.info("The tour has closed");
+  //         onClose();
+  //       },
+  //       onBeforeStepChange: (step) => {
+  //         console.log("Step changed:", step);
+  //         if (infoTextRef.current) {
+  //           infoTextRef.current.style.display =
+  //             step.currentStep === 1 ? "none" : "block";
+  //         }
+  //       },
+  //     });
+  //   }
+
+  //   if (tourStarted && tgInstanceRef.current) {
+  //     tgInstanceRef.current.start();
+  //   }
+
+  //   // return () => {
+  //   //   if (
+  //   //     tgInstanceRef.current &&
+  //   //     typeof tgInstanceRef.current.stop === "function"
+  //   //   ) {
+  //   //     tgInstanceRef.current.stop();
+  //   //   }
+  //   //   tgInstanceRef.current = null;
+  //   // };
+  // }, [tourStarted, onClose]);
+
   useEffect(() => {
-    if (tourStarted) {
-      tgInstanceRef.current = new TourGuideClient({
+    if (!tgInstanceRef.current) {
+      const tg = new TourGuideClient({
         nextBtnText: "Next",
         prevBtnText: "Previous",
         finishBtnText: "Finish",
         onFinish: () => {
           if (infoTextRef.current) infoTextRef.current.style.display = "block";
+          alert("Tour finished!");
         },
         onBeforeStepChange: (step) => {
-          console.log("step", step);
-          if (step.currentStep === 1) {
-            if (infoTextRef.current) infoTextRef.current.style.display = "none";
-          } else {
-            if (infoTextRef.current)
-              infoTextRef.current.style.display = "block";
+          console.log("Step changed:", step);
+          if (infoTextRef.current) {
+            infoTextRef.current.style.display =
+              step.currentStep === 1 ? "none" : "block";
           }
         },
       });
 
+      tg.onAfterExit(() => {
+        console.info("The tour has closed");
+        onClose();
+      });
+
+      tgInstanceRef.current = tg;
+    }
+
+    if (tourStarted && tgInstanceRef.current) {
       tgInstanceRef.current.start();
     }
 
-    return () => {
-      if (tgInstanceRef.current) {
-        tgInstanceRef.current = null;
-      }
-    };
-  }, [tourStarted]);
+    // return () => {
+    //   if (
+    //     tgInstanceRef.current &&
+    //     typeof tgInstanceRef.current.stop === "function"
+    //   ) {
+    //     tgInstanceRef.current.stop();
+    //   }
+    //   tgInstanceRef.current = null;
+    // };
+  }, [tourStarted, onClose]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -48,7 +98,6 @@ const Instructions = ({ label }) => {
     setTimeout(() => {
       setTourStarted(true);
     }, 200);
-    if (infoTextRef.current) infoTextRef.current.style.display = "block";
   };
 
   return (
@@ -132,7 +181,11 @@ const Instructions = ({ label }) => {
         </div>
       </div>
 
-      <div className="py-5 gap-2 qr-container transition-fade-in">
+      <div
+        className="py-5 gap-2 qr-container transition-fade-in"
+        data-tg-title="Patient Results"
+        data-tg-tour="After verification, you can now view the list of patient results. Note that only the released results will appear in the list. If a result is not shown, it may still be processing in the laboratory."
+      >
         <h2 className="d-flex text-center justify-content-center align-self-center mb-4">
           Laboratory Results
         </h2>
@@ -172,8 +225,11 @@ const Instructions = ({ label }) => {
 
         <div className="btn-container mt-2 text-center">
           <table className="mb-3">
-            <tbody>
-              {[...Array(10)].map((_, index) => (
+            <tbody
+              data-tg-title="Viewing"
+              data-tg-tour="To view a patient's result, simply click the name or the PDF icon in the list."
+            >
+              {[...Array(3)].map((_, index) => (
                 <tr key={index}>
                   <td className="p-1">{index + 1}.</td>
                   <td className="p-1">
@@ -192,13 +248,6 @@ const Instructions = ({ label }) => {
                             "CBC, PC",
                             "ANTI BODY SCREENING",
                             "CROSSMATCHING FULLY AUTOMATED",
-                            "PT (PROTIME)",
-                            "NA (SODIUM)",
-                            "K (POTASSIUM)",
-                            "CREATININE (CREA)",
-                            "CBC, PC",
-                            "BLOOD UREA NITROGEN (BUN)",
-                            "APTT",
                           ][index]
                         }{" "}
                         <small>(Click to view)</small>
@@ -217,15 +266,13 @@ const Instructions = ({ label }) => {
             <button className="btn btn-sm btn-primary" disabled>
               Previous
             </button>
-            <button className="btn btn-sm btn-primary">Next</button>
-            <button className="btn btn-sm btn-primary">Last</button>
+            <button className="btn btn-sm btn-primary" disabled>
+              Next
+            </button>
+            <button className="btn btn-sm btn-primary" disabled>
+              Last
+            </button>
           </div>
-        </div>
-
-        <div className="d-flex justify-content-center">
-          <button className="btn btn-dark btn-xs">
-            <i className="fa fa-refresh"></i> Restart
-          </button>
         </div>
       </div>
       {/* <p id="info-text" ref={infoTextRef}>

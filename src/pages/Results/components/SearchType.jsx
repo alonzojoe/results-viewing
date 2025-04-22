@@ -54,11 +54,16 @@ const SearchType = ({ language, onSelect, onQRScan }) => {
     onSelect((prev) => ({ ...prev, type: 2 }));
   };
 
+  const onReset = () => {
+    setShow();
+    window.location.reload();
+  };
+
   return (
     <>
       {loading && <PageLoader />}
       {show ? (
-        <Instructions label={label} />
+        <Instructions label={label} onClose={onReset} />
       ) : (
         <div className="ptype-container d-flex align-items-center transition-fade-in">
           <div className="ptype-btn-container">
@@ -84,7 +89,7 @@ const SearchType = ({ language, onSelect, onQRScan }) => {
               </div>
             </div>
             <div className="mt-4">
-              <button className="btn btn-warning" onClick={() => setShow()}>
+              <button className="btn btn-warning" onClick={() => setShow(true)}>
                 <i
                   className="fa-solid fa-circle-info"
                   style={{ fontSize: "16px" }}
