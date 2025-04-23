@@ -70,8 +70,7 @@ const Instructions = ({ label, onClose }) => {
   return (
     <>
       <div
-        className="ptype-container d-flex align-items-center transition-fade-in mb-spacer"
-        id="selection-container"
+        className="ptype-container d-flex align-items-center transition-fade-in mb-spacer pointer-none"
         data-tg-title={stepsLang[0].title}
         data-tg-tour={stepsLang[0].description}
       >
