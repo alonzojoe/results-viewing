@@ -1,49 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { TourGuideClient } from "@sjmc11/tourguidejs/src/Tour";
 import "@sjmc11/tourguidejs/src/scss/tour.scss";
+import LanguageContext from "../../context/Global/language-context";
 
 const Instructions = ({ label, onClose }) => {
   const [tourStarted, setTourStarted] = useState(false);
   const tgInstanceRef = useRef(null);
+  const { language } = useContext(LanguageContext);
 
-  // useEffect(() => {
-  //   if (!tgInstanceRef.current) {
-  //     tgInstanceRef.current = new TourGuideClient({
-  //       nextBtnText: "Next",
-  //       prevBtnText: "Previous",
-  //       finishBtnText: "Finish",
-  //       onFinish: () => {
-  //         if (infoTextRef.current) infoTextRef.current.style.display = "block";
-  //         alert("Tour finished!");
-  //       },
-  //       onAfterExit: () => {
-  //         console.info("The tour has closed");
-  //         onClose();
-  //       },
-  //       onBeforeStepChange: (step) => {
-  //         console.log("Step changed:", step);
-  //         if (infoTextRef.current) {
-  //           infoTextRef.current.style.display =
-  //             step.currentStep === 1 ? "none" : "block";
-  //         }
-  //       },
-  //     });
-  //   }
+  const stepsLang = language?.data[9].steps;
 
-  //   if (tourStarted && tgInstanceRef.current) {
-  //     tgInstanceRef.current.start();
-  //   }
-
-  //   // return () => {
-  //   //   if (
-  //   //     tgInstanceRef.current &&
-  //   //     typeof tgInstanceRef.current.stop === "function"
-  //   //   ) {
-  //   //     tgInstanceRef.current.stop();
-  //   //   }
-  //   //   tgInstanceRef.current = null;
-  //   // };
-  // }, [tourStarted, onClose]);
+  console.log("steps lang", stepsLang);
 
   useEffect(() => {
     if (!tgInstanceRef.current) {
@@ -103,17 +70,16 @@ const Instructions = ({ label, onClose }) => {
   return (
     <>
       <div
-        className="ptype-container d-flex align-items-center transition-fade-in mb-spacer"
-        id="selection-container"
-        data-tg-title="Search Type"
-        data-tg-tour="Select between QR Code or Transaction Number"
+        className="ptype-container d-flex align-items-center transition-fade-in mb-spacer pointer-none"
+        data-tg-title={stepsLang[0].title}
+        data-tg-tour={stepsLang[0].description}
       >
         <div className="ptype-btn-container pe-none">
           <div
             className="ptype-btn new pe-none"
             id="qr"
-            data-tg-title="QR Code"
-            data-tg-tour="For the QR Code: Scan the Patient's QR in Charge Slip or Statement of Account"
+            data-tg-title={stepsLang[1].title}
+            data-tg-tour={stepsLang[1].description}
           >
             <div className="row">
               <i className="fas fa-qrcode col-4"></i>
@@ -123,8 +89,8 @@ const Instructions = ({ label, onClose }) => {
           <div
             className="ptype-btn old pe-none"
             id="tr"
-            data-tg-title="Transaction Number"
-            data-tg-tour="Enter the Patient Transaction Number starting with (ER, OPD, WLK and IN)"
+            data-tg-title={stepsLang[2].title}
+            data-tg-tour={stepsLang[2].description}
           >
             <div className="d-flex">
               <i className="fas fa-t col-4"></i>
@@ -137,8 +103,8 @@ const Instructions = ({ label, onClose }) => {
       </div>
       <div
         className="py-5 gap-2 qr-container transition-fade-in pe-none mb-spacer"
-        data-tg-title="Verification"
-        data-tg-tour="Next, verify the patient's transaction by selecting the transaction date from the date picker."
+        data-tg-title={stepsLang[3].title}
+        data-tg-tour={stepsLang[3].description}
       >
         <h2 className="d-flex text-center justify-content-center align-self-center mb-4">
           Laboratory Results
@@ -183,8 +149,8 @@ const Instructions = ({ label, onClose }) => {
 
       <div
         className="py-5 gap-2 qr-container transition-fade-in"
-        data-tg-title="Patient Results"
-        data-tg-tour="After verification, you can now view the list of patient results. Note that only the released results will appear in the list. If a result is not shown, it may still be processing in the laboratory."
+        data-tg-title={stepsLang[4].title}
+        data-tg-tour={stepsLang[4].description}
       >
         <h2 className="d-flex text-center justify-content-center align-self-center mb-4">
           Laboratory Results
@@ -226,8 +192,8 @@ const Instructions = ({ label, onClose }) => {
         <div className="btn-container mt-2 text-center">
           <table className="mb-3">
             <tbody
-              data-tg-title="Viewing"
-              data-tg-tour="To view a patient's result, simply click the name or the PDF icon in the list."
+              data-tg-title={stepsLang[5].title}
+              data-tg-tour={stepsLang[5].description}
             >
               {[...Array(3)].map((_, index) => (
                 <tr key={index}>

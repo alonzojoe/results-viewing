@@ -60,3 +60,7 @@
 .mb-spacer {
     margin-bottom: 15rem;
 }
+
+.pointer-none {
+    pointer-events: none !important;
+}
