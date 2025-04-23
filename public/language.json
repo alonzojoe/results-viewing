@@ -519,7 +519,40 @@
                     "qrError": "Mali ang QR Code"
                 },
                 "wrong": "May naganap na problema. Pakisubukang muli mamaya.",
-                "restart": "Magumpisang muli"
+                "restart": "Magumpisang muli",
+                "steps" : [
+                    {
+                        "id": 1,
+                        "title": "Uri ng Paghahanap",
+                        "description": "Pumili sa pagitan ng QR Code o Numero ng Transaksyon."
+                    },                    
+                    {
+                        "id": 2,
+                        "title":  "QR Code",
+                        "description": "Para sa QR Code: I-Scan ang QR Code na makikita sa Charge Slip o Statement of Account ng pasyente."
+                    },
+                    {
+                        "id": 3,
+                        "title":  "Numero ng Transaksyon",
+                        "description": "Ilagay ang Numero ng Transaksyon ng Pasyente na nagsisimula sa (ER, OPD, WLK, at IN)"
+                    },
+                    {
+                        "id": 4,
+                        "title":  "Beripikasyon",
+                        "description": "Susunod, beripikahin ang transaksyon ng pasyente sa pamamagitan ng pagpili ng petsa ng transaksyon gamit ang date picker."
+
+                    },
+                    {
+                        "id": 5,
+                        "title":  "Resulta ng pasyente",
+                        "description": "Pagkatapos ng beripikasyon, maaari mo nang tingnan ang listahan ng mga resulta ng pasyente. Tandaan na ang mga nailabas na resulta lamang ang makikita sa listahan. Kung hindi lumitaw ang resulta, maaaring ito ay nasa proseso pa sa laboratoryo."
+                    },
+                    {
+                        "id": 6,
+                        "title":  "Pagtingin",
+                        "description": "Upang makita ang resulta ng pasyente, pindutin lamang ang pangalan o ang PDF icon sa listahan."
+                    }
+                ]
             }
         ]
 
