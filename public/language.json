@@ -239,7 +239,39 @@
                     "qrError": "Invalid QR Code"
                 },
                 "wrong": "Something went wrong. Please try again later.",
-                "restart": "Restart"
+                "restart": "Restart",
+                "steps" : [
+                    {
+                        "id": 1,
+                        "title":  "Search Type",
+                        "description": "Select between QR Code or Transaction Number"
+                    }, 
+                    {
+                        "id": 2,
+                        "title":  "QR Code",
+                        "description": "For the QR Code: Scan the Patient's QR in Charge Slip or Statement of Account"
+                    },
+                    {
+                        "id": 3,
+                        "title":  "Transaction Number",
+                        "description": "Enter the Patient Transaction Number starting with (ER, OPD, WLK and IN)"
+                    },
+                    {
+                        "id": 4,
+                        "title":  "Verification",
+                        "description": "Next, verify the patient's transaction by selecting the transaction date from the date picker."
+                    },
+                    {
+                        "id": 5,
+                        "title":  "Patient Results",
+                        "description": "After verification, you can now view the list of patient results. Note that only the released results will appear in the list. If a result is not shown, it may still be processing in the laboratory."
+                    },
+                    {
+                        "id": 6,
+                        "title":  "Viewing",
+                        "description": "To view a patient's result, simply click the name or the PDF icon in the list."
+                    }
+                ]
             }
         ]
 
