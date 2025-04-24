@@ -271,7 +271,8 @@
                         "title":  "Viewing",
                         "description": "To view a patient's result, simply click the name or the PDF icon in the list."
                     }
-                ]
+                ],
+                "instructions": "Instructions"
             }
         ]
 
@@ -552,7 +553,8 @@
                         "title":  "Pagtingin",
                         "description": "Upang makita ang resulta ng pasyente, pindutin lamang ang pangalan o ang PDF icon sa listahan."
                     }
-                ]
+                ],
+                "instructions": "Panuto"
             }
         ]
 

@@ -12,6 +12,8 @@ const SearchType = ({ language, onSelect, onQRScan }) => {
   const fileInputRef = useRef(null);
   const msg = language?.data[9]?.message;
   const label = language?.data[9];
+  const labelInstructions = language?.data[9].instructions;
+
   const handleFileUpload = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -94,7 +96,7 @@ const SearchType = ({ language, onSelect, onQRScan }) => {
                   className="fa-solid fa-circle-info"
                   style={{ fontSize: "16px" }}
                 ></i>{" "}
-                Instructions
+                {labelInstructions}
               </button>
             </div>
           </div>
