@@ -4,6 +4,7 @@ import moment from "moment";
 
 const Verification = ({ language }) => {
   const dateRef = useRef(null);
+  const lnameRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -21,24 +22,35 @@ const Verification = ({ language }) => {
     if (dateRef.current.value.trim() === "" || dateRef.current.value === null)
       return;
     setIsLoading(true);
-    const transDate = moment(dateRef.current.value).format("YYYY-MM-DD");
+    const bday = moment(dateRef.current.value).format("YYYY-MM-DD");
     await verifyTransaction({
       transaction_no: patient[0].PatientHistoryID,
-      transaction_date: transDate,
+      birthdate: bday,
+      lastname: lnameRef.current.value,
     });
     setIsLoading(false);
     dateRef.current.value = null;
+    lnameRef.current.value = null;
   };
 
   const labelTitle = language?.data[9]?.transaction_date;
   const btnTitle = language?.data[9]?.timeline["verification"];
-
+  const labelLname = "Last Name:";
+  const labelBirthDate = "Birthdate:";
   return (
     <>
-      <div className="w-100 mb-">
-        <label className="fw-bold mb-1">{labelTitle}</label>
+      <div className="w-100 mb-3">
+        <label className="fw-bold mb-1">{labelLname}</label>
+        <input ref={lnameRef} type="text" className="form-control" />
+      </div>
+      <div className="w-100 mb-3">
+        <label className="fw-bold mb-1">{labelBirthDate}</label>
         <input ref={dateRef} type="date" className="form-control" />
       </div>
+      {/* <div className="w-100 mb-2">
+        <label className="fw-bold mb-1">{labelTitle}</label>
+        <input ref={dateRef} type="date" className="form-control" />
+      </div> */}
       <div className="btn-container mt-3 text-center">
         <button
           className="btn-default btn w-100 mb-5"
