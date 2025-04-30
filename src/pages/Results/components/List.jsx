@@ -9,8 +9,9 @@ const PER_PAGE = 10;
 const List = ({ language }) => {
   const { patient: data } = useContext(PatientContext);
   const { patient } = data;
-  const PatientHistoryID = patient[0]?.PatientHistoryID;
-  const [results, loading, error] = useFetch(`/result/${PatientHistoryID}`);
+  console.log("patient", patient);
+  const PatientID = patient[0]?.PatientID;
+  const [results, loading, error] = useFetch(`/result/${PatientID}`);
   const [state, setState] = useState({
     display: [],
     currentPage: 1,
