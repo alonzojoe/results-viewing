@@ -10,6 +10,7 @@ const toast = new Toast();
 
 const initialState = {
   patient: null,
+  patientHistoryIds: [],
   verified: false,
   results: [],
 };
@@ -19,6 +20,14 @@ const patientReducer = (state, action) => {
     case ACTIONS.SET_PATIENT: {
       const { data } = action.payload;
       return { ...state, patient: data };
+    }
+
+    case ACTIONS.SET_PH: {
+      const { data } = action.paylad;
+
+      const phs = data?.map((d) => d.PatientHistoryID) ?? [];
+      console.log("phs", phs);
+      return { ...state, patientHistoryIds: phs };
     }
 
     case ACTIONS.SET_RESULTS: {
@@ -47,9 +56,15 @@ const PatientProvider = ({ children }) => {
         params,
       });
 
+      console.log("resss", res.data.data);
+
       dispatchPatient({
         type: ACTIONS.SET_PATIENT,
         payload: { data: await res.data.data },
+      });
+      dispatchPatient({
+        type: ACTIONS.SET_PH,
+        paylad: { data: await res.data.data },
       });
 
       toast.message("success", msg.proceed);
@@ -63,14 +78,24 @@ const PatientProvider = ({ children }) => {
   };
 
   const verifyTransaction = async (params) => {
+    const payload = { ...params, phs: patient.patientHistoryIds };
+    console.log(payload);
     try {
       const res = await api("/verify", {
-        params,
+        params: {
+          ...params,
+          phs: patient.patientHistoryIds.join(","),
+        },
       });
 
       if (!Array.isArray(res.data.data) || !res.data.data.length) {
         throw new Error("Error");
       }
+
+      dispatchPatient({
+        type: ACTIONS.SET_PATIENT,
+        payload: { data: await res.data.data },
+      });
 
       dispatchPatient({
         type: ACTIONS.SET_VERIFIED,

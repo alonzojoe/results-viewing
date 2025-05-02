@@ -112,6 +112,12 @@ const List = ({ language }) => {
                         </span>
                       </div>
                     </td>
+                    <td className="p-1" colSpan={3}>
+                      {r.RenderDate
+                        ? moment(r.RenderDate).format("L")
+                        : moment().format("L")}
+                      .
+                    </td>
                   </tr>
                 ))
               ) : (
@@ -135,6 +141,7 @@ const List = ({ language }) => {
           />
         )}
       </div>
+      <div className="mb-2"></div>
     </>
   );
 };
