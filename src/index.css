@@ -64,3 +64,8 @@
 .pointer-none {
     pointer-events: none !important;
 }
+
+.qr-container {
+    max-width: 700px !important;
+    width: 90%;
+}
