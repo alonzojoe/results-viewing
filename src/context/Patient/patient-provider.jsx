@@ -27,7 +27,7 @@ const patientReducer = (state, action) => {
 
       const phs = data?.map((d) => d.PatientHistoryID) ?? [];
       console.log("phs", phs);
-      return { ...state, patientHistoryIds: data.map };
+      return { ...state, patientHistoryIds: phs };
     }
 
     case ACTIONS.SET_RESULTS: {
@@ -79,9 +79,14 @@ const PatientProvider = ({ children }) => {
   };
 
   const verifyTransaction = async (params) => {
+    const payload = { ...params, phs: patient.patientHistoryIds };
+    console.log(payload);
     try {
       const res = await api("/verify", {
-        params,
+        params: {
+          ...params,
+          phs: patient.patientHistoryIds.join(","),
+        },
       });
 
       if (!Array.isArray(res.data.data) || !res.data.data.length) {
