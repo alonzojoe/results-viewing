@@ -24,7 +24,10 @@ const patientReducer = (state, action) => {
 
     case ACTIONS.SET_PH: {
       const { data } = action.paylad;
-      return { ...state };
+
+      const phs = data?.map((d) => d.PatientHistoryID) ?? [];
+      console.log("phs", phs);
+      return { ...state, patientHistoryIds: data.map };
     }
 
     case ACTIONS.SET_RESULTS: {
@@ -58,6 +61,11 @@ const PatientProvider = ({ children }) => {
       dispatchPatient({
         type: ACTIONS.SET_PATIENT,
         payload: { data: await res.data.data },
+      });
+
+      dispatchPatient({
+        type: ACTIONS.SET_PH,
+        paylad: { data: await res.data.data },
       });
 
       toast.message("success", msg.proceed);
