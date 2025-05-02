@@ -62,7 +62,6 @@ const PatientProvider = ({ children }) => {
         type: ACTIONS.SET_PATIENT,
         payload: { data: await res.data.data },
       });
-
       dispatchPatient({
         type: ACTIONS.SET_PH,
         paylad: { data: await res.data.data },
@@ -92,6 +91,11 @@ const PatientProvider = ({ children }) => {
       if (!Array.isArray(res.data.data) || !res.data.data.length) {
         throw new Error("Error");
       }
+
+      dispatchPatient({
+        type: ACTIONS.SET_PATIENT,
+        payload: { data: await res.data.data },
+      });
 
       dispatchPatient({
         type: ACTIONS.SET_VERIFIED,
