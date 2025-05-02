@@ -10,6 +10,7 @@ const toast = new Toast();
 
 const initialState = {
   patient: null,
+  patientHistoryIds: [],
   verified: false,
   results: [],
 };
@@ -19,6 +20,11 @@ const patientReducer = (state, action) => {
     case ACTIONS.SET_PATIENT: {
       const { data } = action.payload;
       return { ...state, patient: data };
+    }
+
+    case ACTIONS.SET_PH: {
+      const { data } = action.paylad;
+      return { ...state };
     }
 
     case ACTIONS.SET_RESULTS: {
@@ -46,6 +52,8 @@ const PatientProvider = ({ children }) => {
       const res = await api("/search", {
         params,
       });
+
+      console.log("resss", res.data.data);
 
       dispatchPatient({
         type: ACTIONS.SET_PATIENT,
