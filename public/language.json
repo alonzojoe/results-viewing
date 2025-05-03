@@ -224,6 +224,8 @@
                 "patient": "Patient",
                 "transaction": "Transaction No",
                 "transaction_date": "Transaction Date:",
+                "lastname": "Last Name",
+                "birthdate": "Birth Date",
                 "list": "List of available results",
                 "notFound": "Patient results have not been released yet. Please try again later.",
                 "timeline": {
@@ -505,6 +507,8 @@
                 "patient": "Pasyente",
                 "transaction": "Numero ng Transaksyon",
                 "transaction_date": "Petsa ng Transaction:",
+                "lastname": "Last Name",
+                "birthdate": "Birthdate",
                 "list": "Listahan ng mga maaring makita na resulta",
                 "notFound": "Hindi pa nailalabas ang mga resulta ng pasyente. Pakisubukang muli mamaya.",
                 "timeline": {
