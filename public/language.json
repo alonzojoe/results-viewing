@@ -507,8 +507,8 @@
                 "patient": "Pasyente",
                 "transaction": "Numero ng Transaksyon",
                 "transaction_date": "Petsa ng Transaction:",
-                "lastname": "Last Name",
-                "birthdate": "Birthdate",
+                "lastname": "Huling Pangalan:",
+                "birthdate": "Petsa ng kapanganakan:",
                 "list": "Listahan ng mga maaring makita na resulta",
                 "notFound": "Hindi pa nailalabas ang mga resulta ng pasyente. Pakisubukang muli mamaya.",
                 "timeline": {
