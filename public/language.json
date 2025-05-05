@@ -262,7 +262,7 @@
                     {
                         "id": 4,
                         "title":  "Verification",
-                        "description": "Next, verify the patient's transaction by selecting the transaction date from the date picker."
+                        "description": "Next, verify the patient's information by entering their last name and birthdate."
                     },
                     {
                         "id": 5,
@@ -546,7 +546,7 @@
                     {
                         "id": 4,
                         "title":  "Beripikasyon",
-                        "description": "Susunod, beripikahin ang transaksyon ng pasyente sa pamamagitan ng pagpili ng petsa ng transaksyon gamit ang date picker."
+                        "description": "Susunod, beripikahin ang impormasyon ng pasyente sa pamamagitan ng paglalagay ng apelyido at petsa ng kapanganakan."
 
                     },
                     {
