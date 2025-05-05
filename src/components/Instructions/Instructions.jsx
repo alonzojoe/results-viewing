@@ -127,13 +127,21 @@ const Instructions = ({ label, onClose }) => {
           </div>
         </div>
         <hr />
-        <div className="w-100 mb-">
+        {/* <div className="w-100 mb-">
           <label className="fw-bold mb-1">Transaction Date:</label>
           <input
             type="date"
             className="form-control"
             data-has-listeners="true"
           />
+        </div> */}
+        <div className="w-100 mb-3">
+          <label className="fw-bold mb-1">{`Last Name`}</label>
+          <input type="text" className="form-control" />
+        </div>
+        <div className="w-100 mb-3">
+          <label className="fw-bold mb-1">{`Birthdate`}</label>
+          <input type="date" className="form-control" />
         </div>
         <div className="btn-container mt-3 text-center">
           <button className="btn-default btn w-100 mb-5">
