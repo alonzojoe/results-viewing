@@ -176,13 +176,14 @@ const Instructions = ({ label, onClose }) => {
         </div>
 
         <hr />
-
+        <div className="mt-2 alert alert-danger" role="alert">
+          <p className="mb-0">
+            <i className="fa-solid fa-triangle-exclamation"></i>
+          </p>
+        </div>
         <div className="mb-2">
           <div>
             Patient <span className="fw-semibold">DELA CRUZ, JUAN BULAON</span>
-          </div>
-          <div>
-            Transaction No <span className="fw-semibold">IN-32025-419339</span>
           </div>
         </div>
 
