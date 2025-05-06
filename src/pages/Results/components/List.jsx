@@ -122,7 +122,6 @@ const List = ({ language }) => {
                       {r.RenderDate
                         ? moment(r.RenderDate).format("L")
                         : moment().format("L")}
-                      .
                     </td>
                   </tr>
                 ))

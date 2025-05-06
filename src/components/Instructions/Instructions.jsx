@@ -225,6 +225,9 @@ const Instructions = ({ label, onClose }) => {
                       </span>
                     </div>
                   </td>
+                  <td className="p-1" colSpan={3}>
+                    {["05/06/2025", "05/06/2025", "05/06/2025"][index]}
+                  </td>
                 </tr>
               ))}
             </tbody>
