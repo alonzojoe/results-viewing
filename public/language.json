@@ -224,7 +224,10 @@
                 "patient": "Patient",
                 "transaction": "Transaction No",
                 "transaction_date": "Transaction Date:",
+                "lastname": "Last Name:",
+                "birthdate": "Birthdate:",
                 "list": "List of available results",
+                "listInfo": "If your results are not appearing below, it may be due to system restrictions that prevent some results from being available online. In such cases, please contact the JBLMGH Laboratory.",
                 "notFound": "Patient results have not been released yet. Please try again later.",
                 "timeline": {
                     "search": "Search",
@@ -259,7 +262,7 @@
                     {
                         "id": 4,
                         "title":  "Verification",
-                        "description": "Next, verify the patient's transaction by selecting the transaction date from the date picker."
+                        "description": "Next, verify the patient's information by entering their last name and birthdate."
                     },
                     {
                         "id": 5,
@@ -505,7 +508,10 @@
                 "patient": "Pasyente",
                 "transaction": "Numero ng Transaksyon",
                 "transaction_date": "Petsa ng Transaction:",
+                "lastname": "Huling Pangalan:",
+                "birthdate": "Petsa ng kapanganakan:",
                 "list": "Listahan ng mga maaring makita na resulta",
+                "listInfo": "Kung ang iyong mga resulta ay hindi lumilitaw sa ibaba, maaaring ito ay dahil sa mga limitasyon ng sistema na pumipigil sa ilang resulta na maging available online. Sa ganitong mga kaso, mangyaring makipag-ugnayan sa JBLMGH Laboratory",
                 "notFound": "Hindi pa nailalabas ang mga resulta ng pasyente. Pakisubukang muli mamaya.",
                 "timeline": {
                     "search": "Hanapin",
@@ -540,7 +546,7 @@
                     {
                         "id": 4,
                         "title":  "Beripikasyon",
-                        "description": "Susunod, beripikahin ang transaksyon ng pasyente sa pamamagitan ng pagpili ng petsa ng transaksyon gamit ang date picker."
+                        "description": "Susunod, beripikahin ang impormasyon ng pasyente sa pamamagitan ng paglalagay ng apelyido at petsa ng kapanganakan."
 
                     },
                     {

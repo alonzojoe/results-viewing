@@ -127,13 +127,14 @@ const Instructions = ({ label, onClose }) => {
           </div>
         </div>
         <hr />
-        <div className="w-100 mb-">
-          <label className="fw-bold mb-1">Transaction Date:</label>
-          <input
-            type="date"
-            className="form-control"
-            data-has-listeners="true"
-          />
+
+        <div className="w-100 mb-3">
+          <label className="fw-bold mb-1">{`Last Name`}</label>
+          <input type="text" className="form-control" />
+        </div>
+        <div className="w-100 mb-3">
+          <label className="fw-bold mb-1">{`Birthdate`}</label>
+          <input type="date" className="form-control" />
         </div>
         <div className="btn-container mt-3 text-center">
           <button className="btn-default btn w-100 mb-5">
@@ -175,13 +176,17 @@ const Instructions = ({ label, onClose }) => {
         </div>
 
         <hr />
-
+        <div className="mt-2 alert alert-danger" role="alert">
+          <p className="mb-0">
+            <i className="fa-solid fa-triangle-exclamation"></i> If your results
+            are not appearing below, it may be due to system restrictions that
+            prevent some results from being available online. In such cases,
+            please contact the JBLMGH Laboratory.
+          </p>
+        </div>
         <div className="mb-2">
           <div>
             Patient <span className="fw-semibold">DELA CRUZ, JUAN BULAON</span>
-          </div>
-          <div>
-            Transaction No <span className="fw-semibold">IN-32025-419339</span>
           </div>
         </div>
 
@@ -219,6 +224,9 @@ const Instructions = ({ label, onClose }) => {
                         <small>(Click to view)</small>
                       </span>
                     </div>
+                  </td>
+                  <td className="p-1" colSpan={3}>
+                    {["05/06/2025", "05/06/2025", "05/06/2025"][index]}
                   </td>
                 </tr>
               ))}

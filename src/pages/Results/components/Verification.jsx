@@ -35,8 +35,8 @@ const Verification = ({ language }) => {
 
   const labelTitle = language?.data[9]?.transaction_date;
   const btnTitle = language?.data[9]?.timeline["verification"];
-  const labelLname = "Last Name:";
-  const labelBirthDate = "Birthdate:";
+  const labelLname = language?.data[9]?.lastname;
+  const labelBirthDate = language?.data[9]?.birthdate;
   return (
     <>
       <div className="w-100 mb-3">

@@ -61,6 +61,8 @@ const List = ({ language }) => {
     notFound: language?.data[9]?.notFound,
   };
 
+  const warningInfo = language?.data[9]?.listInfo;
+
   const viewResults = (docPath) => {
     let formattedPath = docPath.replace(/\\/g, "/");
     formattedPath = unescape(encodeURIComponent(formattedPath));
@@ -71,7 +73,11 @@ const List = ({ language }) => {
 
   return (
     <>
-      <PatientInfo label={label} patient={patient[0]} />
+      <PatientInfo
+        label={label}
+        warningInfo={warningInfo}
+        patient={patient[0]}
+      />
 
       {!error && state.display.length > 0 && (
         <TitleContainer title={`${label.list}:`} />
@@ -116,7 +122,6 @@ const List = ({ language }) => {
                       {r.RenderDate
                         ? moment(r.RenderDate).format("L")
                         : moment().format("L")}
-                      .
                     </td>
                   </tr>
                 ))
