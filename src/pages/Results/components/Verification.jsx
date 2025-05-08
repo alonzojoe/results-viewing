@@ -9,12 +9,8 @@ const Verification = ({ language }) => {
 
   const {
     patient: data,
-    dispatchPatient,
     verifyTransaction,
-    verified,
   } = useContext(PatientContext);
-
-  // console.log("data", data);
 
   const verify = async () => {
     const { patient } = data;
@@ -47,10 +43,6 @@ const Verification = ({ language }) => {
         <label className="fw-bold mb-1">{labelBirthDate}</label>
         <input ref={dateRef} type="date" className="form-control" />
       </div>
-      {/* <div className="w-100 mb-2">
-        <label className="fw-bold mb-1">{labelTitle}</label>
-        <input ref={dateRef} type="date" className="form-control" />
-      </div> */}
       <div className="btn-container mt-3 text-center">
         <button
           className="btn-default btn w-100 mb-5"
