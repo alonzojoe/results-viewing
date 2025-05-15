@@ -43,9 +43,6 @@ const Results = () => {
 
   return (
     <div>
-      <LogoContainer>
-        <img src={LogoImg} alt="JBLMGH - OKOPD" />
-      </LogoContainer>
       {payload.type === null ? (
         <SearchType
           language={language}
